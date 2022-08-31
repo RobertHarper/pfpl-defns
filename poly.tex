@@ -1,0 +1,23 @@
+\ifthenelse{\boolean{symops}}{
+  \newcommand{\alltyabt}[2]{\OpABT{\forall}{\AbsABT{#1}{#2}}}
+}{
+  \newcommand{\alltyabt}[2]{\OpABT{\kw{all}}{\AbsABT{#1}{#2}}}
+}
+\newcommand{\alltycst}[2]{\forall\cdparens{\AbsABT{#1}{#2}}}
+
+\newcommand{\tlamabt}[2]{\OpABT{\Lambda}{\AbsABT{#1}{#2}}}
+\newcommand{\tlamcst}[2]{\Lambda\cdparens{#1}\,{#2}}
+\newcommand{\tappabt}[2]{\OpABTp{\kw{App}}{#2}{#1}}
+\newcommand{\tappcst}[2]{{#1}\cdsqbracks{#2}}
+
+\ifthenelse{\boolean{restrictedpoly}}{
+  \newcommand{\IsMono}[1]{\JPost{#1}{\textsf{mono}}}
+  \newcommand{\IsPoly}[1]{\JPost{#1}{\textsf{poly}}}
+  \newcommand{\HasRank}[2]{\JPost{#1}{\textsf{type}\,{\sqbracks{#2}}}}
+  \newcommand{\IsOfRank}[3]{\IsOf{#1}{#2}\,{\sqbracks{#3}}}
+}{}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

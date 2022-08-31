@@ -1,0 +1,101 @@
+\newcommand{\casesepcst}{\ensuremath{\mathbin{\cdbar}}}
+\newcommand{\casebrcst}{\ensuremath{\mathbin{\hookrightarrow}}}
+
+\ifthenelse{\boolean{symops}}{
+  \newcommand{\voidtyabt}{\kw{0}}
+  \newcommand{\sumtyabt}[2]{\OpABT{+}{#1;#2}}
+}{
+  \newcommand{\voidtyabt}{\kw{void}}
+  \newcommand{\sumtyabt}[2]{\OpABT{\kw{sum}}{#1;#2}}
+}
+\newcommand{\voidtycst}{\voidtyabt}
+\newcommand{\sumtycst}[2]{{#1}\mathbin{+}{#2}}
+
+\newcommand{\abortexabt}[2]{\OpABTp{\kw{absurd}}{#1}{#2}}
+\newcommand{\abortexcst}[2]{\OpABT{\kw{absurd}}{#2}}
+\newcommand{\nullcaseexabt}[2]{\OpABTp{\kw{case}}{#1}{#2}}
+\newcommand{\nullcaseexcst}[2]{\kwop{case}{#2}\,\cdbraces{\,}}
+
+\newcommand{\inexabt}[3]{\OpABTp{\OpInst{\kw{in}}{#2}}{#1}{#3}}
+\newcommand{\inexcst}[3]{{#2}\mathbin{\cdot}{#3}}
+\newcommand{\varinexcst}[2]{\inexcst{}{#1}{#2}}
+\newcommand{\inlexabt}[3]{\inexabt{#1;#2}{\kw{l}}{#3}}
+\newcommand{\inlexcst}[2]{\inexcst{}{\kw{l}}{#2}}
+\newcommand{\varinlexcst}[3]{\inlexcst{}{#3}}
+\newcommand{\inrexabt}[3]{\inexabt{#1;#2}{\kw{r}}{#3}}
+\newcommand{\inrexcst}[2]{\inexcst{}{\kw{r}}{#2}}
+\newcommand{\varinrexcst}[3]{\inrexcst{}{#3}}
+\newcommand{\caseexabt}[7]{\OpABT{\kw{case}}{#1;\AbsABT{#2}{#4};\AbsABT{#5}{#7}}}
+\newcommand{\caseexcst}[7]{\kwop{case}{#1}\,\cdbraces{\inlexcst{}{#2}\casebrcst{#4}\casesepcst\inrexcst{}{#5}\casebrcst{#7}}}
+
+\newcommand{\dgensumcst}[1]{\sqbracks{#1}} % bracket notation for general sum types
+\newcommand{\gensumabt}[3]{\OpABT{\kw{sum}}{\Genff{#1}{#2}{#3}}}
+\ifthenelse{\boolean{infixprodsum}}{
+  \newcommand{\gensumcst}[3]{\bigplus_{{#2}\in{#1}}{#3}} % was \sum
+  \newcommand{\gensumcstgen}[3]{\explff[+]{#1}{#2}{#3}}
+}{
+  \newcommand{\gensumcst}[3]{\dgensumcst{#3}_{#2\in #1}}
+  \newcommand{\gensumcstgen}[3]{\dgensumcst{\explff[,]{#1}{#2}{#3}}}
+}
+
+\newcommand{\geninjabt}[3]{\inexabt{#1}{#2}{#3}}
+\newcommand{\geninjcst}[3]{\inexcst{}{#2}{#3}}
+\newcommand{\gencaseabt}[5]{\OpABT{\kw{case}}{#2;\Genff{#1}{#3}{\AbsABT{#4}{#5}}}}
+\newcommand{\dgencasecst}[3]{\kwop{case}{#2}\,\cdbraces{#3}}
+% \newcommand{\gencasecst}[5]{\dgencasecst{}{#2}{\geninjcst{#1}{#3}{#4}\casebrcst{#5}}_{{#3}\in{#1}}}
+\newcommand{\gencasecst}[5]{\dgencasecst{}{#2}{\geninjcst{#1}{#3}{#4}\casebrcst {#5}\mid {#3}\in {#1}}}
+\newcommand{\gencasecstgen}[5]{\dgencasecst{}{#2}{\geninjcst{}{#3_1}{#4_1}\casebrcst{#5_1}\casesepcst\dots\casesepcst\geninjcst{}{#3_{#1}}{#4_{#1}}\casebrcst{#5_{#1}}}}
+
+\newcommand{\twotycst}{\kw{2}}
+\newcommand{\twotrcst}{\kw{Y}}
+\newcommand{\twofacst}{\kw{N}}
+
+\newcommand{\booltyabt}{\kw{bool}}
+\newcommand{\booltycst}{\kw{bool}}
+\newcommand{\trexabt}{\kw{true}}
+\newcommand{\trexcst}{\trexabt}
+\newcommand{\faexabt}{\kw{false}}
+\newcommand{\faexcst}{\faexabt}
+\newcommand{\ifexabt}[3]{\OpABT{\kw{if}}{#1;#2;#3}}
+\newcommand{\ifexcst}[3]{\kwop{if}{#1}\kwop{then}{#2}\kwop{else}{#3}}
+
+\newcommand{\opttyabt}[1]{\OpABT{\kw{opt}}{#1}}
+\newcommand{\opttycst}[1]{{#1}\,\kw{opt}}
+\newcommand{\noneexabt}{\kw{null}}
+\newcommand{\noneexcst}{\noneexabt}
+\newcommand{\someexabt}[1]{\OpABT{\kw{just}}{#1}}
+\newcommand{\someexcst}[1]{\someexabt{#1}}
+\newcommand{\whichexabt}[5]{\OpABTp{\kw{ifnull}}{#4}{#1;#2;\AbsABT{#3}{#5}}}
+\newcommand{\whichexcst}[5]{\kwop{ifnull}{#1}\,\cdbraces{\noneexcst\casebrcst{#2}\casesepcst\someexcst{#3}\casebrcst{#5}}}
+
+\newcommand{\alttycst}[2]{\pairff{#1}{#2}}
+\newcommand{\enumtycst}[1]{#1}
+\ifthenelse{\boolean{infixprodsum}}{
+  \newcommand{\vartycst}[1]{#1}
+  \newcommand{\altcomb}[2]{\combff[+]{#1}{#2}}
+}{
+  \newcommand{\vartycst}[1]{\dgensumcst{#1}}
+  \newcommand{\altcomb}[2]{\combff[,]{#1}{#2}}
+}
+\newcommand{\varinjexcst}[2]{\geninjcst{}{#1}{#2}}
+\newcommand{\altcst}[4]{\geninjcst{}{#1}{#3}\casebrcst{#4}}
+\newcommand{\varcaseexcst}[2]{\kwop{case}{#1}\,\cdbraces{#2}}
+
+\newcommand{\suitty}{\kw{suit}}
+\newcommand{\casesuit}[5]{\kwop{case}{#1}\,\cdbraces{\clubsuit\casebrcst{#2}\casesepcst\diamondsuit\casebrcst{#3}\casesepcst\heartsuit\casebrcst{#4}\casesepcst\spadesuit\casebrcst{#5}}}
+\newcommand{\casesuitcst}[5]{\varcaseexcst{#1}{\altcst{\kw{clubs}}{#1}{\unittycst}{\_}{#2}}\casesepcst\altcst{\kw{diamonds}}{\unittycst}{\_}{#3}\casesepcst\altcst{\kw{hearts}}{\unittycst}{\_}{#4}\casesepcst\altcst{\kw{spades}}{\unittycst}{\_}{#5}}
+
+%\newcommand{\chartycst}{\kw{char}}
+\newcommand{\codech}[1]{\OpABT{\kw{codech}}{#1}}
+\newcommand{\chcode}[1]{\OpABT{\kw{chcode}}{#1}}
+\newcommand{\chcodetycst}{\kw{chcode}}
+
+\newcommand{\copairexcst}[2]{\cdsqbracks{#1,#2}}
+
+\newcommand{\sigtyabt}{\kw{signal}}
+\newcommand{\sigtycst}{\kw{signal}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

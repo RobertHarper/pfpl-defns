@@ -1,0 +1,53 @@
+% judgment syntax
+\newcommand{\JPre}[2]{{#2}\;{#1}}
+\newcommand{\JPPre}[2]{{#2}\parens{#1}}
+\newcommand{\JPost}[2]{{#1}\;{#2}}
+\newcommand{\JPPost}[2]{\parens{#1}\;{#2}}
+\newcommand{\JInfix}[3]{{#1}\mathrel{#2}{#3}}
+\newcommand{\JTInfix}[3]{{#1}\mathbin{#2}{#3}} % tighter form for contexts
+\newcommand{\FamInst}[2]{{#1}\,[{#2}]}
+\newcommand{\JFam}[3]{\FamInst{\JPPre{#3}{#1}}{#2}}
+
+% general judgment
+\newcommand{\vargen}{\mathrel{\vert}}
+\newcommand{\symgen}{\mathrel{\Vert}}
+
+% specific judgments
+\newcommand{\IsCtx}[1]{\JPost{#1}{\textsf{ctx}}}
+\newcommand{\IsType}[1]{\JPost{#1}{\textsf{type}}}
+\newcommand{\IsTp}[1]{\IsType{#1}}
+\newcommand{\IsKd}[1]{\JPost{#1}{\textsf{kind}}}
+\newcommand{\EqTy}[2]{\JInfix{#1}{\equiv}{#2}}
+\newcommand{\EqTp}[2]{\EqTy{#1}{#2}}
+\newcommand{\EqKd}[2]{\JInfix{#1}{\equiv}{#2}}
+\newcommand{\IsOf}[2]{\JInfix{#1}{:}{#2}}
+\newcommand{\IsOfVar}[2]{\JTInfix{#1}{:}{#2}}
+\newcommand{\IsOfKd}[2]{\JInfix{#1}{\coloncolon}{#2}}
+\newcommand{\IsOfKdVar}[2]{\JTInfix{#1}{\coloncolon}{#2}}
+\newcommand{\IsOfP}[2]{\IsOf{#1}{#2}}
+\newcommand{\IsOfM}[2]{\JInfix{#1}{\altdiv}{#2}}
+\newcommand{\IsOfMW}[3]{{#1}\mathrel{\altdiv}{#2}\mathrel{@}{#3}}
+\newcommand{\IsOfW}[3]{{#1}\mathbin{:}{#2}\mathbin{@}{#3}}
+\newcommand{\Has}[2]{\JTInfix{#1}{\twiddle}{#2}}
+\newcommand{\HasSym}[2]{\JInfix{#1}{\twiddle}{#2}}
+\newcommand{\HasW}[3]{{#1}\mathbin{\twiddle}{#2}\mathbin{@}{#3}}
+\newcommand{\EqOfKd}[3]{{#1}\mathrel{\equiv}{#2}\mathrel{\coloncolon}{#3}}
+
+\newcommand{\IsOfVal}[2]{\IsOf{#1}{#2}}
+\newcommand{\IsOfLax}[2]{\IsOfM{#1}{#2}}
+\newcommand{\IsOfComp}[2]{\IsOfM{#1}{#2}}
+
+\newcommand{\IsOfSy}[2]{\JInfix{#1}{\uparrow}{#2}}
+\newcommand{\IsOfAn}[2]{\JInfix{#1}{\downarrow}{#2}}
+
+\newcommand{\IsOK}[1]{\JPost{#1}{\textsf{ok}}} % statics only!
+\newcommand{\IsMobile}[1]{\JPost{#1}{\textsf{mobile}}}
+
+\newcommand{\IsVal}[2][]{\JPost{#2}{\textsf{val}_{#1}}}
+\newcommand{\IsErr}[2][]{\JPost{#2}{\textsf{err}_{#1}}}
+
+\newcommand{\DefEqv}[3]{\IsOf{{#1}\equiv{#2}}{#3}}
+\newcommand{\IsDefEqvCl}[3]{\DefEqv{#1}{#2}{#3}}
+\newcommand{\IsDefEqv}[4]{{#1}\entails\DefEqv{#2}{#3}{#4}}
+\newcommand{\IsDefEqvU}[3]{{#1}\entails{#2}\equiv{#3}}
+\newcommand{\DefEqvU}[2]{{#1}\equiv{#2}}

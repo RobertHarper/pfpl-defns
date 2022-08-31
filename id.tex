@@ -1,0 +1,63 @@
+\newcommand{\IsNat}[1]{\JPost{#1}{\mathsf{nat}}}
+\newcommand{\ZeroNat}{\kw{zero}}
+\newcommand{\SuccNat}[1]{\OpABT{\kw{succ}}{#1}}
+\newcommand{\IsEqNat}[2]{{#1}\mathbin{\mathsf{is}}{#2}}
+\newcommand{\IsSum}[3]{\JPPre{#1; #2; #3}{\mathsf{sum}}}
+\newcommand{\IsMax}[3]{\JPPre{#1; #2; #3}{\mathsf{max}}}
+\newcommand{\SumIs}[3]{{#1}\mathbin{+}{#2}={#3}}
+
+\newcommand{\IsBT}[1]{\JPost{#1}{\mathsf{tree}}}
+\newcommand{\EmptyBT}{\kw{empty}}
+\newcommand{\NodeBT}[2]{\OpABT{\kw{node}}{#1; #2}}
+\newcommand{\IsEqTree}[2]{{#1}\mathbin{\mathsf{is}}{#2}}
+
+\newcommand{\IsVarTree}[1]{\JPost{#1}{\mathsf{tree}}}
+\newcommand{\IsVarForest}[1]{\JPost{#1}{\mathsf{forest}}}
+\newcommand{\VarNode}[1]{\OpABT{\kw{node}}{#1}}
+\newcommand{\VarNil}{\kw{nil}}
+\newcommand{\VarCons}[2]{\OpABT{\kw{cons}}{#1; #2}}
+\newcommand{\HgtVarTree}[2]{\JPPre{#1; #2}{\mathsf{hgtT}}}
+\newcommand{\HgtVarFor}[2]{\JPPre{#1; #2}{\mathsf{hgtF}}}
+
+\newcommand{\Hgt}[2]{\JPPre{#1; #2}{\mathsf{hgt}}}
+\newcommand{\HgtIs}[2]{\JPPre{#1}{\mathsf{hgt}}\mathbin{\mathsf{is}}{#2}}
+\newcommand{\MaxIs}[3]{\JPPre{#1; #2}{\mathsf{max}}\mathbin{\mathsf{is}}{#3}}
+\newcommand{\MMaxIs}[2]{\JPPre{#1}{\mathsf{max}}\mathbin{\mathsf{is}}{#2}}
+
+\newcommand{\IsList}[1]{\JPost{#1}{\mathsf{list}}}
+\newcommand{\NilList}{\kw{nil}}
+\newcommand{\ConsList}[2]{\OpABT{\kw{cons}}{#1; #2}}
+
+\newcommand{\IsEven}[1]{\JPost{#1}{\mathsf{even}}}
+\newcommand{\IsOdd}[1]{\JPost{#1}{\mathsf{odd}}}
+
+\newcommand{\IsObj}[1]{\JPost{#1}{\mathsf{obj}}}
+
+\newcommand{\IsBin}[1]{\JPost{#1}{\mathsf{bin}}}
+\newcommand{\ZeroBin}{\kw{zero}}
+\newcommand{\TwiceBin}[1]{\OpABT{\kw{twice}}{#1}}
+\newcommand{\TwicePOBin}[1]{\OpABT{\kw{twiceplus1}}{#1}}
+\newcommand{\SumBin}[3]{\JPPre{#1; #2; #3}{\mathsf{sum}}}
+\newcommand{\SuccBin}[2]{\JPPre{#1; #2}{\mathsf{succ}}}
+
+\newcommand{\IsComb}[1]{\JPost{#1}{\mathsf{comb}}}
+\newcommand{\Scomb}{\mathord{\kw{s}}}
+\newcommand{\Kcomb}{\mathord{\kw{k}}}
+\newcommand{\AppComb}[2]{\OpABT{\kw{ap}}{{#1}; {#2}}}
+\newcommand{\ApComb}[2]{{#1}\,{#2}}
+\newcommand{\MultComb}[2]{{#1}\mathbin{\cdot}{#2}}
+\newcommand{\ConvComb}[2]{{#1}\equiv{#2}}
+\newcommand{\AbsComb}[2]{\cdsqbracks{#1}\,{#2}}
+\newcommand{\LenComb}[2]{\JPPre{#1; #2}{\mathsf{len}}}
+\newcommand{\Abstract}[3]{\JPre{#2}{\mathsf{abs}_{#1}}\mathbin{\mathsf{is}}{#3}}
+
+\newcommand{\IsClosed}[1]{\JPost{#1}{\mathsf{closed}}}
+
+% derivation variables
+\newcommand{\D}{\triangledown}
+\newcommand{\DD}{\bigtriangledown\nolimits}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

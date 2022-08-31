@@ -1,0 +1,39 @@
+\newcommand{\posv}[1]{#1^{\scriptscriptstyle{\mathord{+}}}}
+\newcommand{\negv}[1]{{#1^{\scriptscriptstyle{\mathord{-}}}}}
+\newcommand{\ntopabt}[1]{\OpABT{\kw{dn}}{#1}}
+\newcommand{\ntopcst}[1]{\mathop{\downarrow}{#1}}
+\newcommand{\ptonabt}[1]{\OpABT{\kw{up}}{#1}}
+\newcommand{\ptoncst}[1]{\mathop{\uparrow}{#1}}
+
+\newcommand{\delnegabt}[1]{\OpABT{\kw{del}^{\kw{-}}}{#1}}
+\newcommand{\delnegcst}[1]{\delnegabt{#1}}
+\newcommand{\delposabt}[1]{\OpABT{\kw{del}^{\kw{+}}}{#1}}
+\newcommand{\delposcst}[1]{\delposabt{#1}}
+
+\newcommand{\ifzkabt}[3]{\OpABT{\kw{ifz}}{{#1};{\AbsABT{#2}{#3}}}}
+\newcommand{\ifzkcst}[3]{\ifzkabt{#1}{#2}{#3}}
+\newcommand{\forcenegabt}[1]{\OpABT{\kw{force}^{\kw{-}}}{#1}}
+\newcommand{\forcenegcst}[1]{\forcenegabt{#1}}
+\newcommand{\idnegabt}{\mathord{\kw{id}^{\kw{-}}}}
+\newcommand{\idnegcst}{\idnegabt}
+
+\newcommand{\apkabt}[2]{\OpABT{\kw{ap}}{#1;#2}}
+\newcommand{\apkcst}[2]{\apkabt{#1}{#2}}
+\newcommand{\forceposabt}[2]{\OpABT{\kw{force}^{\kw{+}}}{\AbsABT{#1}{#2}}}
+\newcommand{\forceposcst}[2]{\forceposabt{#1}{#2}}
+
+\newcommand{\retcabt}[1]{\OpABT{\kw{ret}}{#1}}
+\newcommand{\retccst}[1]{\OpABT{\kw{ret}}{#1}}
+\newcommand{\pcutcabt}[2]{\OpABT{\kw{cut}^{\kw{+}}}{#1;#2}}
+\newcommand{\pcutccst}[2]{{#1}\mathrel{\triangleright}{#2}}
+\newcommand{\ncutcabt}[2]{\OpABT{\kw{cut}^{\kw{-}}}{#1;#2}}
+\newcommand{\ncutccst}[2]{{#1}\mathrel{\triangleright}{#2}}
+
+\newcommand{\IsOfK}[3]{\IsOf{#1}{{#2}\mathbin{>}{#3}}}
+
+\newcommand{\Comp}[2]{{#1}\mathbin{;}{#2}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

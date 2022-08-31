@@ -1,0 +1,70 @@
+\ifthenelse{\boolean{symops}}{
+  \newcommand{\unittyabt}{\kw{1}}
+  \newcommand{\unittycst}{\kw{1}}
+  \newcommand{\prodtyabt}[2]{\OpABT{\times}{#1;#2}}
+  \newcommand{\prodtycst}[2]{{#1}\times{#2}}
+}{
+  \newcommand{\unittyabt}{\kw{unit}}
+  \newcommand{\unittycst}{\kw{unit}}
+  \newcommand{\prodtyabt}[2]{\OpABT{\kw{prod}}{#1;#2}}
+  \newcommand{\prodtycst}[2]{{#1}\times{#2}}
+}
+
+\newcommand{\unitexabt}{\kw{triv}}
+\newcommand{\unitexcst}{\langle\rangle}
+\newcommand{\pairexabt}[2]{\OpABT{\kw{pair}}{#1;#2}}
+\newcommand{\pairexcst}[2]{\langle #1, #2\rangle}
+\newcommand{\projexabt}[2]{\OpABT{\OpInst{\kw{pr}}{#2}}{#1}}
+\newcommand{\projexcst}[2]{{#1}\mathbin\cdot{#2}}
+\newcommand{\fstexabt}[1]{\projexabt{#1}{\kw{l}}}
+\newcommand{\sndexabt}[1]{\projexabt{#1}{\kw{r}}}
+\newcommand{\fstexcst}[1]{\projexcst{#1}{\kw{l}}}
+\newcommand{\sndexcst}[1]{\projexcst{#1}{\kw{r}}}
+
+\newcommand{\dgenprodcst}[1]{\brackets{#1}} % bracket notation for general product types
+\newcommand{\genprodabt}[3]{\OpABT{\kw{prod}}{\Genff{#1}{#2}{#3}}}
+\ifthenelse{\boolean{infixprodsum}}{
+  \newcommand{\genprodcst}[3]{\bigtimes_{{#2}\in{#1}}{#3}} % was \prod
+  \newcommand{\genprodcstgen}[3]{\explff[\times]{#1}{#2}{#3}}
+}{
+  \newcommand{\genprodcst}[3]{\dgenprodcst{#3}_{#2\in #1}}
+  \newcommand{\genprodcstgen}[3]{\dgenprodcst{\explff[,]{#1}{#2}{#3}}}
+}
+
+\newcommand{\dgentuplecst}[1]{\brackets{#1}}
+\newcommand{\gentupleabt}[3]{\OpABT{\kw{tpl}}{\Genff{#1}{#2}{#3}}}
+% \newcommand{\gentuplecst}[3]{\dgentuplecst{#3}_{{#2}\in{#1}}}
+\newcommand{\gentuplecst}[3]{\dgentuplecst{\Genff{#1}{#2}{#3}}}
+\newcommand{\gentuplecstgen}[3]{\dgentuplecst{\explff[,]{#1}{#2}{#3}}}
+\newcommand{\genprojabt}[3]{\projexabt{#3}{#2}}
+\newcommand{\genprojcst}[3]{\projexcst{#3}{#2}}
+
+\newcommand{\fldtycst}[2]{\pairff{#1}{#2}}
+\ifthenelse{\boolean{infixprodsum}}{
+  \newcommand{\rcdtycst}[1]{#1}
+  \newcommand{\fldcomb}[2]{\combff[\times]{#1}{#2}}
+  \newcommand{\fldnil}{\unittycst}
+}{
+  \newcommand{\rcdtycst}[1]{\dgenprodcst{#1}}
+  \newcommand{\fldcomb}[2]{\combff[,]{#1}{#2}}
+  \newcommand{\fldnil}{}
+}
+\newcommand{\rcdexcst}[1]{\dgentuplecst{#1}}
+\newcommand{\fldexcst}[2]{\pairff{#1}{#2}}
+\newcommand{\fldselexcst}[2]{\projexcst{#2}{#1}}
+
+\newcommand{\pprodtyabt}[2]{\OpABT{\otimes}{#1;#2}}
+\newcommand{\pprodtycst}[2]{{#1}\otimes{#2}}
+\newcommand{\ppairexabt}[2]{\OpABT{\otimes}{#1;#2}}
+\newcommand{\ppairexcst}[2]{{#1}\otimes{#2}}
+\newcommand{\splitexabt}[4]{\OpABT{\kw{split}}{{#1};\AbsABT{#2,#3}{#4}}}
+\newcommand{\splitexcst}[4]{\kw{split}\,{#1}\,\kw{as}\,\ppairexcst{#2}{#3}\,\kw{in}\,{#4}}
+\newcommand{\checkexabt}[2]{\OpABT{\kw{check}}{#1;#2}}
+\newcommand{\checkexcst}[2]{\kw{check}\,{#1}\,\kw{as}\,\unitexcst\,\kw{in}\,{#2}}
+
+\newcommand{\patlamcst}[2]{\mathop{\lambda}\cdparens{\AbsABT{#1}{#2}}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

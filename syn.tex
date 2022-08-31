@@ -1,0 +1,63 @@
+% generic symbols
+\newcommand{\IsSymb}[1]{\JPost{#1}{\mathsf{sym}}}
+\newcommand{\IsSym}[1]{\IsSymb{#1}}
+\newcommand{\Diff}[2]{{#1}\not={#2}}
+\newcommand{\DiffSymb}[2]{\IsSymb{\Diff{#1}{#2}}}
+
+% permutations
+%\newcommand{\IdPerm}{\mathop{\mathit{id}}}
+%\newcommand{\SwapPerm}[2]{\sqbracks{\swap{#1}{#2}}}
+%\newcommand{\CompPerm}[2]{{#1}\circ{#2}}
+\newcommand{\PermAct}[2]{\widehat{#1}\parens{#2}}
+
+% sort, arity, valence
+\newcommand{\Sort}[1]{\textsf{#1}}
+\newcommand{\Ar}[2]{\parens{#1}{#2}}
+\newcommand{\Vl}[2]{\noparens{#1}\cddot{#2}}
+
+% operator families w/optional instance
+\newcommand{\Opn}[2][]{{#2}\ifpresent{#1}{\cdsqbracks{#1}}}
+\newcommand{\OpInst}[2]{\Opn[#2]{#1}}  % uses of \OpInst should be inlined
+
+% asts
+\newcommand{\OpAST}[2]{{#1}\cdparens{#2}}
+
+% abt's
+\newcommand{\OpABT}[2]{{#1}\cdparens{#2}}
+\newcommand{\OpABTp}[3]{{#1}\cdbraces{#2}\cdparens{#3}}
+\newcommand{\OpABTn}[2]{{#1}\cdbraces{#2}}
+\newcommand{\ABT}[2]{\OpABT{#1}{#2}}
+
+\newcommand{\ABS}[2]{{#1}\mathbin{\cddot}{#2}}
+\newcommand{\AbsABT}[2]{\ABS{#1}{#2}}
+\newcommand{\SymABT}[2]{\ABS{#1}{#2}}
+
+\newcommand{\ListABT}[2]{{#1};\dots;{#2}}
+\newcommand{\SeqABT}[2]{\ListABT{{#2}_1}{{#2}_{#1}}}
+\newcommand{\ZeqABT}[2]{\ListABT{{#2}_0}{{#2}_{#1}}}
+
+% some sorts
+\newcommand{\ExprSort}{\Sort{Exp}}
+\newcommand{\TypeSort}{\Sort{Typ}}
+\newcommand{\RefSort}{\Sort{Ref}}
+
+% free occurrence
+\newcommand{\IsFree}[2]{{#1}\in{#2}}
+\newcommand{\IsntFree}[2]{{#1}\notin{#2}}
+
+% substitution
+\newcommand{\Subst}[3]{\sqbracks{{#1}\mathord{/}{#2}}{#3}}
+\newcommand{\SubstIs}[4]{\Subst{#1}{#2}{#3}\mathbin{=}{#4}}
+\newcommand{\SubstIsAST}[4]{\IsAST{\SubstIs{#1}{#2}{#3}{#4}}}
+\newcommand{\SubstIsABTn}[5]{\IsABTn{\SubstIs{#1}{#2}{#3}{#4}}{#5}}
+\newcommand{\SubstIsABT}[4]{\IsABT{\SubstIsAbt{#1}{#2}{#3}{#4}}}
+
+\newcommand{\AlphaEq}[2]{{#1}=_\alpha{#2}}
+\newcommand{\AlphaEqABTn}[3]{\IsABTn{\AlphaEq{#1}{#2}}{#3}}
+\newcommand{\AlphaEqABT}[2]{\IsABT{\AlphaEq{#1}{#2}}}
+\newcommand{\NotAlphaEq}[2]{{#1}\not=_\alpha{#2}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

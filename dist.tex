@@ -1,0 +1,38 @@
+\newcommand{\WLLStepsTo}[3]{\LLStepsTo{#1\mathop{@}#3}{#2}}
+
+\newcommand{\WIsProc}[2]{\JPost{#1}{\textsf{proc}}\mathrel{@}{#2}}
+\newcommand{\WIsAct}[2]{\JPost{#1}{\textsf{action}}\mathrel{@}{#2}}
+
+\newcommand{\wclsfdtyabt}[1]{\kw{clsfd}\cdsqbracks{#1}}
+\newcommand{\wclsfdtycst}[1]{\wclsfdtyabt{#1}}
+\newcommand{\wclstyabt}[2]{\OpABT{\OpInst{\kw{cls}}{#1}}{#2}}
+\newcommand{\wclstycst}[2]{{#2}\,\kw{cls}\cdsqbracks{#1}}
+\newcommand{\wchantyabt}[2]{\OpABT{\OpInst{\kw{chan}}{#1}}{#2}}
+\newcommand{\wchantycst}[2]{{#2}\,\kw{chan}\cdsqbracks{#1}}
+
+\newcommand{\wcmdtyabt}[2]{\OpABT{\OpInst{\kw{cmd}}{#1}}{#2}}
+\newcommand{\wcmdtycst}[2]{{#2}\,\kw{cmd}\cdsqbracks{#1}}
+\newcommand{\wevttyabt}[2]{\OpABT{\OpInst{\kw{event}}{#1}}{#2}}
+\newcommand{\wevttycst}[2]{{#2}\,\kw{event}\cdsqbracks{#1}}
+
+\newcommand{\gocmdabt}[2]{\OpABT{\OpInst{\kw{at}}{#1}}{#2}}
+\newcommand{\gocmdcst}[2]{\kwop{at}{#1}\kwop{do}{#2}}
+
+\newcommand{\WExecsTo}[3]{\xRightarrow[#3]{\;{#2}\mathop{\kw{@}}{#1}\;}}
+\newcommand{\WResult}[3]{\SState{#1}{\concproccst{#2}{#3}}}
+
+\newcommand{\sendcmdabt}[2]{\OpABT{\OpInst{\kw{snd}}{#1}}{#2}}
+\newcommand{\sendcmdcst}[2]{\sendcmdabt{#1}{#2}}
+
+\newcommand{\sendrefcmdabt}[2]{\OpABT{\kw{sndref}}{#1;#2}}
+\newcommand{\sendrefcmdcst}[2]{\sendrefcmdabt{#1}{#2}}
+
+\newcommand{\atfamabt}[2]{\OpABT{\OpInst{\kw{at}}{#1}}{#2}}
+\newcommand{\atfamcst}[2]{{#2}\kwop{at}{#1}}
+
+\newcommand{\justfam}[1]{\OpABT{\kw{just}}{#1}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

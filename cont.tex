@@ -1,0 +1,20 @@
+\newcommand{\conttyabt}[1]{\OpABT{\kw{cont}}{#1}}
+\newcommand{\letccabt}[3]{\OpABTp{\kw{letcc}}{#1}{\AbsABT{#2}{#3}}}
+\newcommand{\throwabt}[3]{\OpABTp{\kw{throw}}{#1}{#2;#3}}
+
+\newcommand{\conttycst}[1]{{#1}\,\kw{cont}}
+\newcommand{\letcccst}[2]{\kwop{letcc}{#1}\kwop{in}{#2}}
+\newcommand{\throwcst}[3]{\kwop{throw}{#2}\kwop{to}{#3}}
+
+\newcommand{\contexabt}[1]{\OpABT{\kw{cont}}{#1}}
+\newcommand{\contexcst}[1]{\contexabt{#1}}
+
+\newcommand{\corotyabt}[1]{\OpABT{\kw{coro}}{#1}}
+\newcommand{\corotycst}[1]{{#1}\,\kw{coro}}
+
+\newcommand{\routtycst}[2]{\cdparens{#1\cdcomma #2}\,\kw{rout}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

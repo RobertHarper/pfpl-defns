@@ -1,0 +1,30 @@
+\newcommand{\fluidtyabt}[1]{\OpABT{\kw{fluid}}{#1}}
+\newcommand{\fluidtycst}[1]{{#1}\,\kw{fluid}}
+
+\newcommand{\fputabt}[3]{\OpABT{\OpInst{\kw{put}}{#1}}{#2;#3}}
+\newcommand{\fputcst}[3]{\kwop{put}{#2}\kwop{for}{#1}\kwop{in}{#3}}
+\newcommand{\fgetabt}[1]{\OpInst{\kw{get}}{#1}}
+\newcommand{\fgetcst}[1]{\kwop{get}{#1}}
+
+\newcommand{\flabt}[1]{\OpInst{\kw{fl}}{#1}}
+\newcommand{\flcst}[1]{\mathop{\cdamper}{#1}}
+\newcommand{\dfputabt}[3]{\OpABT{\kw{putfl}}{#1;#2;#3}}
+\newcommand{\dfputcst}[3]{\kwop{putfl}{#1}\kwop{is}#2\kwop{in}#3}
+\newcommand{\dfgetabt}[1]{\OpABT{\kw{getfl}}{#1}}
+\newcommand{\dfgetcst}[1]{\kwop{getfl}{#1}}
+
+\newcommand{\FStepsTo}[1]{\LStepsTo{#1}}
+\newcommand{\IsUnbound}[2]{\JPost{#2}{\mathsf{unbound}_{#1}}}
+
+\newcommand{\farrtycst}[3]{{#1}\to_{#2}{#3}}
+
+\newcommand{\CSearch}[3]{{#1}\geq{#2}\mathrel{\mathbf{?}}{#3}}
+
+\newcommand{\SCEval}[3]{\MState{#1}{#2}\mathrel{\triangleright}{#3}}
+\newcommand{\SCRet}[3]{\MState{#1}{#2}\mathrel{\triangleleft}{#3}}
+\newcommand{\SCFail}[2]{\MState{#1}{#2}\mathrel{\blacktriangleleft}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

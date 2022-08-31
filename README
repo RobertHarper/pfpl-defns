@@ -1,0 +1,7 @@
+The definitions of general usage are found in
+    1. Broad class of notations: generic.tex
+    2. Language names: lang.tex
+    3. Abstract syntax: syn.tex
+    4. Judgments: jdg.tex
+    5. Transition systems: ts.tex
+The others are per-chapter, with notations appropriate to that chapter.

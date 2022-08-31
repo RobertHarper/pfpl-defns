@@ -1,0 +1,28 @@
+% transition systems
+
+% crude method of widening
+\newcommand{\StepsTo}[1][]{\xmapsto[\,#1\,]{\hspace*{1em}}}
+\newcommand{\UStepsTo}[1]{\xmapsto{\,#1\,}}
+\newcommand{\LStepsTo}[1]{\xmapsto[\,#1\,]{\hspace*{1em}}}
+\newcommand{\LLStepsTo}[2]{\xmapsto[\,#2\,]{\,#1\,}}
+
+\newcommand{\IsState}[2][]{\JPost{#2}{\textsf{state}_{#1}}} % never used, but for overview
+\newcommand{\IsFinal}[2][]{\JPost{#2}{\textsf{final}_{#1}}}
+\newcommand{\IsInitial}[2][]{\JPost{#2}{\textsf{initial}_{#1}}}
+
+\newcommand{\IsOKState}[2][]{\JPost{#2}{\textsf{ok}}_{#1}}
+\newcommand{\IsReady}[2][]{\JPost{#2}{\textsf{ready}_{#1}}}
+\newcommand{\IsDone}[2][]{\JPost{#2}{\textsf{done}_{#1}}}
+
+\newcommand{\NFold}[2]{#1^{#2}}
+\newcommand{\Opt}[1]{\NFold{#1}{?}}
+
+\newcommand{\MultiStepsTo}[1][\ast]{\NFold{\StepsTo}{#1}}
+\newcommand{\OptStepsTo}{\Opt{\StepsTo}}
+
+\newcommand{\MultiLLStepsTo}[3][\ast]{\NFold{\LLStepsTo{#2}{#3}}{#1}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

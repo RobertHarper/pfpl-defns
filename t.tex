@@ -1,0 +1,26 @@
+\newcommand{\nattyabt}{\kw{nat}}
+\newcommand{\nattycst}{\nattyabt}
+
+\newcommand{\zeroabt}{\kw{z}}
+\newcommand{\zerocst}{\zeroabt}
+\newcommand{\succabt}[1]{\OpABT{\kw{s}}{#1}}
+\newcommand{\succcst}[1]{\succabt{#1}}
+
+\newcommand{\predabt}[1]{\OpABT{\kw{p}}{#1}}
+\newcommand{\predcst}[1]{\predabt{#1}}
+
+\newcommand{\numeral}[1]{\overline{#1}}
+
+\newcommand{\natrecabt}[6]{\OpABTp{\kw{rec}}{#1}{#2;#3;\AbsABT{#4}{\AbsABT{#5}{#6}}}}
+\newcommand{\natreccst}[6]{\kwop{rec}{#2}\,\cdbraces{\zerocst\casebrcst{#3}\casesepcst\succcst{#4}\kwop{with}{#5}\casebrcst{#6}}}
+
+\newcommand{\natiterabt}[5]{\OpABTp{\kw{iter}}{#1}{#2;#3;\AbsABT{#4}{#5}}}
+\newcommand{\natitercst}[5]{\kwop{iter}{#2}\,\cdbraces{\zerocst\casebrcst{#3}\casesepcst\succcst{#4}\casebrcst{#5}}}
+
+\newcommand{\nullstrabt}{\epsilon}
+\newcommand{\consstrabt}[2]{{#1}\cdot{#2}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

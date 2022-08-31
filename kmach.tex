@@ -1,0 +1,32 @@
+\newcommand{\EmptyStack}{\mathord{\epsilon}}
+\newcommand{\FrameSeparator}{;}
+\newcommand{\ConsStack}[2]{{#2}\FrameSeparator{#1}}
+
+\newcommand{\Hole}{\mathbf{-}}
+
+\newcommand{\IsCStack}[1]{\JPost{#1}{\mathsf{stack}}}
+\newcommand{\IsCFrame}[1]{\JPost{#1}{\mathsf{frame}}}
+
+\newcommand{\FrameArr}[2]{{#1}\mathbin{\rightsquigarrow}{#2}}
+\newcommand{\FrameOf}[3]{\IsOf{#1}{\FrameArr{#2}{#3}}}
+\newcommand{\IsOfFrame}[3]{\FrameOf{#1}{#2}{#3}}
+
+%\newcommand{\IsOfStack}[2]{{#1}\mathrel{\mathord{\triangleleft}\mathord{:}}{#2}}
+\newcommand{\IsOfStack}[2]{{#1}\mathrel{\div}{#2}}
+
+\newcommand{\CEval}[2]{{#1}\mathrel{\triangleright}{#2}}
+\newcommand{\CRet}[2]{{#1}\mathrel{\triangleleft}{#2}}
+
+\newcommand{\CInit}[1]{\CEval{\EmptyStack}{#1}}
+\newcommand{\CFin}[1]{\CRet{\EmptyStack}{#1}}
+
+\newcommand{\UnravelsTo}[2]{{#1}\mathrel{\looparrowright}{#2}}
+\newcommand{\WrapsTo}[3]{{#1}\mathbin{\bowtie}{#2}={#3}}
+\newcommand{\Wraps}[2]{{#1}\mathbin{\bowtie}{#2}}
+
+\newcommand{\ansty}{\tau_{\textit{ans}}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

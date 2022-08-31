@@ -1,0 +1,38 @@
+\ifthenelse{\boolean{symops}}{
+  \newcommand{\rectyabt}[2]{\OpABT{\rho}{\AbsABT{#1}{#2}}}
+  \newcommand{\rectycst}[2]{\rectyabt{#1}{#2}}
+}{
+  \newcommand{\rectyabt}[2]{\OpABT{\kw{rec}}{\AbsABT{#1}{#2}}}
+  \newcommand{\rectycst}[2]{\kwop{rec}{#1}\kwbin{is}{#2}}
+}
+
+\newcommand{\foldexabt}[3]{\OpABTp{\kw{fold}}{\AbsABT{#1}{#2}}{#3}}
+\newcommand{\foldexcst}[3]{\sfoldexcst{#3}}
+\newcommand{\sfoldexcst}[1]{\OpABT{\kw{fold}}{#1}}                    % short form 
+\newcommand{\unfoldexabt}[1]{\OpABT{\kw{unfold}}{#1}}
+\newcommand{\unfoldexcst}[1]{\OpABT{\kw{unfold}}{#1}}
+
+\newcommand{\selfexabt}[3]{\OpABTp{\kw{self}}{#1}{\AbsABT{#2}{#3}}}
+\newcommand{\selfexcst}[3]{\kwop{self}{#2}\kwop{is}{#3}}
+\newcommand{\unselfexabt}[1]{\OpABT{\kw{unroll}}{#1}}
+\newcommand{\unselfexcst}[1]{\unselfexabt{#1}}
+
+\newcommand{\ugenrecabt}[2]{\OpABT{\kw{fix}}{\AbsABT{#1}{#2}}}
+\newcommand{\ugenreccst}[2]{\kwop{fix}{#1}\kwop{is}{#2}}
+
+\newcommand{\recarrtycst}[2]{{#1}{\to_\textit{rec}}{#2}}
+\newcommand{\recfunabt}[5]{\OpABTp{\kw{fun}_\textit{rec}}{#1;#2}{\AbsABT{#3}{\AbsABT{#4}{#5}}}}
+\newcommand{\recfuncst}[5]{\kwop{fun}_\textit{rec}{#3}\cdparens{{#4}{\cdcolon}{#1}}{\cdcolon}{#2}\kwop{is}{#5}}
+\newcommand{\recappabt}[2]{\OpABT{\kw{app}_\textit{rec}}{#1;#2}}
+\newcommand{\recappcst}[2]{\recappabt{#1}{#2}}
+
+\newcommand{\selftyabt}[1]{\OpABT{\kw{self}}{#1}}
+\newcommand{\selftycst}[1]{\JPost{#1}{\kw{self}}}
+
+\newcommand{\signaltyabt}{\kw{signal}}
+\newcommand{\signaltycst}{\signaltyabt}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

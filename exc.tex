@@ -1,0 +1,40 @@
+\newcommand{\failabt}{\kw{fail}}
+\newcommand{\failcst}{\mathord{\kw{fail}}}
+\newcommand{\catchabt}[2]{\OpABT{\kw{catch}}{#1;#2}}
+\newcommand{\catchcst}[2]{\kwop{catch}{#1}\kwop{ow}{#2}}
+
+\newcommand{\raiseabt}[2]{\OpABT{\kw{raise}}{#2}}
+\newcommand{\raisecst}[2]{\OpABT{\kw{raise}}{#2}}
+\newcommand{\handleabt}[3]{\OpABT{\kw{try}}{#1;\AbsABT{#2}{#3}}}
+\newcommand{\handlecst}[3]{\kwop{try}{#1}\kwop{ow}{#2}\casebrcst{#3}}
+
+\newcommand{\exctyabt}{\kw{exn}}
+\newcommand{\exctycst}{\exctyabt}
+
+\newcommand{\excexcst}[1]{\excexabt{#1}}
+\newcommand{\raisecmdabt}[2]{\raiseabt{#1}{#2}}
+\newcommand{\raisecmdcst}[2]{\raisecst{#1}{#2}}
+\newcommand{\seqowcmdabt}[5]{\OpABT{\kw{bnd}}{#1;\AbsABT{#2}{#3};\AbsABT{#4}{#5}}}
+\newcommand{\seqowcmdcst}[5]{\kwop{bnd}{#2}\mathbin{\hookrightarrow}{#1}\kwop{in}{#3}\kwop{ow}{#4}\mathbin{\hookrightarrow}{#5}}
+\newcommand{\seqowexpabt}[5]{\OpABT{\kw{let}}{#1;\AbsABT{#2}{#3};\AbsABT{#4}{#5}}}
+\newcommand{\seqowexpcst}[5]{\kwop{let}{#1}\mathbin{\hookrightarrow}{#2}\kwop{in}{#3}\kwop{ow}{#4}\mathbin{\hookrightarrow}{#5}}
+
+\newcommand{\epstytr}[1]{\widehat{#1}}
+\newcommand{\epsextr}[1]{\widehat{#1}}
+\newcommand{\epscmdtr}[1]{\widehat{#1}}
+
+\newcommand{\CFail}[1]{{#1}\mathrel{\blacktriangleleft}{}}
+\newcommand{\CRaise}[2]{{#1}\mathrel{\blacktriangleleft}{#2}}
+\newcommand{\CEvalM}[2]{{#1}\mathrel{\blacktriangleright}{#2}}
+
+% \newcommand{\mayraiserefabt}[2]{\OpABTp{\kw{raises}}{#1}{#2}}
+% \newcommand{\mayraiserefcst}[2]{\kwop{raises}{#2}}
+
+\newcommand{\SatsM}[4]{\Sats{#1}{#2}{#3}\kwop{ow}{#4}}
+\newcommand{\valexcrefabt}[3]{\OpABT{\kw{cmd}}{#2;#3}}
+\newcommand{\valexcrefcst}[3]{\cdparens{{#2};{#3}}\,\kw{cmd}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

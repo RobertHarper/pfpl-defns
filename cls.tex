@@ -1,0 +1,36 @@
+\newcommand{\newinstabt}[2]{\OpABT{\OpInst{\kw{new}}{#1}}{#2}}
+\newcommand{\newinstcst}[2]{\newinstabt{#1}{#2}}
+\newcommand{\msgsndabt}[2]{\OpABT{\OpInst{\kw{snd}}{#2}}{#1}}
+\newcommand{\msgsndcst}[2]{{#1}\mathop{\Leftarrow}{#2}}
+
+\newcommand{\cartclscst}{\kw{cart}}
+\newcommand{\polarclscst}{\kw{pol}}
+\newcommand{\distmthcst}{\kw{dist}}
+\newcommand{\quadmthcst}{\kw{quad}}
+
+%\newcommand{\pointtycst}{\kw{point}}
+\newcommand{\quadtyabt}{\kw{quad}}
+\newcommand{\quadtycst}{\quadtyabt}
+
+\newcommand{\tauobj}{\tau_{\textsf{obj}}}
+\newcommand{\tobj}{t_{\textsf{obj}}}
+
+\newcommand{\taumv}{\tau_{\textsf{mv}}}
+\newcommand{\emv}{e_{\textsf{mv}}}
+\newcommand{\taucv}{\tau_{\textsf{cv}}}
+\newcommand{\ecv}{e_{\textsf{cv}}}
+\newcommand{\taudm}{\tau_{\textsf{dm}}}
+\newcommand{\edm}{e_{\textsf{dm}}}
+\newcommand{\phidm}{\phi_{\textsf{dm}}}
+\newcommand{\phimv}{\phi_{\textsf{mv}}}
+\newcommand{\phicv}{\phi_{\textsf{cv}}}
+
+\newcommand{\instrefabt}[1]{\OpInst{\kw{inst}}{#1}}
+\newcommand{\instrefcst}[1]{\instrefabt{#1}}
+\newcommand{\admitsrefabt}[1]{\OpInst{\kw{admits}}{#1}}
+\newcommand{\admitsrefcst}[1]{\admitsrefabt{#1}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

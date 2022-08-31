@@ -1,0 +1,91 @@
+\newcommand{\IsProp}[1]{\JPost{#1}{\textsf{prop}}}
+\newcommand{\IsTrue}[1]{\JPost{#1}{\textsf{true}}}
+\newcommand{\IsFalse}[1]{\JPost{#1}{\textsf{false}}}
+\newcommand{\Contradiction}{\#}
+\newcommand{\IsProof}[2]{{#1}\mathrel{:}{#2}}
+\newcommand{\IsRefut}[2]{{#1}\mathrel{\div}{#2}}
+\newcommand{\Contra}[3][]{#2\mathrel{\cd{\#}_{#1}}#3}
+
+\newcommand{\ltrueabt}{\mathord{\top}}
+\newcommand{\ltruecst}{\ltrueabt}
+\newcommand{\lfalseabt}{\perp}
+\newcommand{\lfalsecst}{\lfalseabt}
+\newcommand{\landabt}[2]{\OpABT{\mathop{\wedge}}{#1;#2}}
+\newcommand{\landcst}[2]{#1\wedge #2}
+\newcommand{\lorabt}[2]{\OpABT{\mathop{\vee}}{#1;#2}}
+\newcommand{\lorcst}[2]{#1\vee #2}
+\newcommand{\limpabt}[2]{\OpABT{\mathop{\supset}}{#1;#2}}
+\newcommand{\limpcst}[2]{#1\supset #2}
+\newcommand{\lnotabt}[1]{\OpABT{\mathop{\neg}}{#1}}
+\newcommand{\lnotcst}[1]{\neg #1}
+
+\newcommand{\lintro}[1]{\kw{{#1}{\text{-}}\textsf{I}}}
+\newcommand{\lelim}[1]{\kw{{#1}{\text{-}}\textsf{E}}}
+
+\newcommand{\ltrueiabt}{\lintro{true}}
+\newcommand{\ltrueicst}{\unitexcst}
+\newcommand{\landiabt}[2]{\OpABT{\lintro{and}}{#1;#2}}
+\newcommand{\landicst}[2]{\pairexcst{#1}{#2}}
+\newcommand{\landelabt}[1]{\OpABT{\OpInst{\lelim{and}}{\kw{l}}}{#1}}
+\newcommand{\landelcst}[1]{\fstexcst{#1}}
+\newcommand{\landerabt}[1]{\OpABT{\OpInst{\lelim{and}}{\kw{r}}}{#1}}
+\newcommand{\landercst}[1]{\sndexcst{#1}}
+\newcommand{\limpiabt}[3]{\OpABT{\lintro{imp}}{\AbsABT{#2}{#3}}}
+\newcommand{\limpicst}[3]{\ulamcst{#2}{#3}}
+\newcommand{\limpeabt}[2]{\OpABT{\lelim{imp}}{#1;#2}}
+\newcommand{\limpecst}[2]{\appcst{#1}{#2}}
+\newcommand{\lfalseeabt}[2]{\OpABT{\lelim{false}}{#2}}
+\newcommand{\lfalseecst}[2]{\nullcaseexcst{#1}{#2}}
+\newcommand{\lorilabt}[2]{\OpABT{\OpInst{\lintro{or}}{\kw{l}}}{#2}}
+\newcommand{\lorilcst}[2]{\inlexcst{#1}{#2}}
+\newcommand{\lorirabt}[2]{\OpABT{\OpInst{\lintro{or}}{\kw{r}}}{#2}}
+\newcommand{\lorircst}[2]{\inrexcst{#1}{#2}}
+\newcommand{\loreabt}[7]{\OpABT{\lelim{or}}{#1;\AbsABT{#2}{#4};\AbsABT{#5}{#7}}}
+\newcommand{\lorecst}[7]{\caseexcst{#1}{#2}{#3}{#4}{#5}{#6}{#7}}
+\newcommand{\lnotiabt}[3]{\OpABT{\lintro{not}}{\AbsABT{#2}{#3}}}
+\newcommand{\lnoticst}[3]{\ulamcst{#2}{#3}}
+\newcommand{\lnoteabt}[2]{\OpABT{\lelim{not}}{#1;#2}}
+\newcommand{\lnotecst}[2]{\appcst{#1}{#2}}
+
+\newcommand{\ltru}[1]{\kw{#1}{\text{-}}\textsf{T}}
+\newcommand{\lfal}[1]{\kw{#1}{\text{-}}\textsf{F}}
+
+\newcommand{\ltruetabt}{\ltru{true}}
+\newcommand{\ltruetcst}{\unitexcst}
+\newcommand{\lfalsefabt}{\lfal{false}}
+\newcommand{\lfalsefcst}{\kw{exfalso}}
+\newcommand{\landtabt}[2]{\OpABT{\ltru{and}}{#1;#2}}
+\newcommand{\landtcst}[2]{\pairexcst{#1}{#2}}
+\newcommand{\landflabt}[1]{\OpABT{\OpInst{\lfal{and}}{\kw{l}}}{#1}}
+\newcommand{\landflcst}[1]{\kw{fst};{#1}}
+\newcommand{\landfrabt}[1]{\OpABT{\OpInst{\lfal{and}}{\kw{r}}}{#1}}
+\newcommand{\landfrcst}[1]{\kw{snd};{#1}}
+\newcommand{\limptabt}[3]{\OpABT{\ltru{imp}}{\AbsABT{#2}{#3}}}
+\newcommand{\limptcst}[3]{\ulamcst{#2}{#3}}
+\newcommand{\limpfabt}[2]{\OpABT{\lfal{imp}}{#1;#2}}
+\newcommand{\limpfcst}[2]{\OpABT{\kw{ap}}{#1};{#2}}
+\newcommand{\lortlabt}[2]{\OpABT{\OpInst{\ltru{or}}{\kw{l}}}{#2}}
+\newcommand{\lortlcst}[2]{\inlexcst{#1}{#2}}
+\newcommand{\lortrabt}[2]{\OpABT{\OpInst{\ltru{or}}{\kw{r}}}{#2}}
+\newcommand{\lortrcst}[2]{\inrexcst{#1}{#2}}
+\newcommand{\lorfabt}[2]{\OpABT{\lfal{or}}{#1;#2}}
+\newcommand{\lorfcst}[2]{\OpABT{\kw{case}}{#1;#2}}
+\newcommand{\lnottabt}[1]{\OpABT{\ltru{not}}{#1}}
+\newcommand{\lnottcst}[1]{\OpABT{\kw{not}}{#1}}
+\newcommand{\lnotfabt}[1]{\OpABT{\lfal{not}}{#1}}
+\newcommand{\lnotfcst}[1]{\OpABT{\kw{not}}{#1}}
+
+\newcommand{\ccrabt}[4]{\OpABT{\kw{ccr}}{\AbsABT{#2}{\cdparens{\Contra{#3}{#4}}}}}
+\newcommand{\ccrcst}[4]{\OpABT{\kw{ccr}}{\AbsABT{#2}{\cdparens{\Contra{#3}{#4}}}}}
+\newcommand{\ccpabt}[4]{\OpABT{\kw{ccp}}{\AbsABT{#2}{\cdparens{\Contra{#3}{#4}}}}}
+\newcommand{\ccpcst}[4]{\OpABT{\kw{ccp}}{\AbsABT{#2}{\cdparens{\Contra{#3}{#4}}}}}
+
+\newcommand{\initrefut}[1]{\kw{halt}_{#1}}
+
+\newcommand{\IsCanPrf}[1]{\JPost{#1}{\textsf{canonical}}}
+\newcommand{\IsCanRef}[1]{\JPost{#1}{\textsf{canonical}}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

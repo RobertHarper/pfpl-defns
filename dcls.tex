@@ -1,0 +1,49 @@
+\newcommand{\clsfdtyabt}{\kw{clsfd}}
+\newcommand{\clsfdtycst}{\clsfdtyabt}
+
+\newcommand{\clsinabt}[2]{\OpABT{\OpInst{\kw{in}}{#1}}{#2}}
+\newcommand{\clsincst}[2]{{#1}\cdot{#2}}
+
+\newcommand{\clsisabt}[5]{\OpABT{\OpInst{\kw{isin}}{#1}}{#2;\AbsABT{#3}{#4};#5}}
+\newcommand{\clsiscst}[5]{\kwop{match}{#2}\kwop{as}\clsincst{#1}{#3}\hookrightarrow{#4}\kwop{ow}\hookrightarrow{#5}}
+
+\newcommand{\clsisrefabt}[5]{\OpABT{\kw{isinref}}{#1;#2;\AbsABT{#3}{#4};#5}}
+\newcommand{\clsisrefcst}[5]{\clsisrefabt{#1}{#2}{#3}{#4}{#5}}
+
+\newcommand{\clstyabt}[1]{\OpABT{\kw{cls}}{#1}}
+\newcommand{\clstycst}[1]{{#1}\,\kw{cls}}
+\newcommand{\clsabt}[1]{\OpInst{\kw{cls}}{#1}}
+\newcommand{\clscst}[1]{\mathop{\cdamper}{#1}}
+\newcommand{\clsinrefabt}[2]{\OpABT{\kw{mk}}{#1;#2}} %should've been called inref
+\newcommand{\clsinrefcst}[2]{\clsinrefabt{#1}{#2}}
+\newcommand{\clsinrefaltabt}[2]{\OpABT{\kw{inref}}{#1;#2}}
+\newcommand{\clsinrefaltcst}[2]{\clsinrefaltabt{#1}{#2}}
+
+\newcommand{\excclstyabt}[1]{\OpABT{\kw{exc}}{#1}}
+\newcommand{\excclstycst}[1]{\excclstyabt{#1}}
+
+\newcommand{\excdeclabt}[3]{\OpABTp{\kw{dclexc}}{#2}{\AbsABT{#1}{#3}}}
+\newcommand{\excdeclcst}[3]{\kwop{dclexc}\,{#1}\kwop{of}{#2}\kwop{in}{#3}}
+\newcommand{\excraiseabt}[2]{\OpABT{\kw{raiseexc}}{#1;#2}}
+\newcommand{\excraisecst}[2]{\kwop{raiseexc}\varinexcst{#1}{#2}}
+\newcommand{\exchandlecst}[7]%
+{\kwop{tryexc}{#1}\kwop{ow}{\varinexcst{{#3}_{1}}{{#4}_{1}}\casebrcst{{#5}_{1}}\casesepcst\dots\casesepcst\varinexcst{{#3}_{#2}}{{#4}_{#2}}\casebrcst{#5}_{#2}\casesepcst{#6}\casebrcst{#7}}}
+
+\newcommand{\exchdlabt}[4]{\OpABT{\kw{hdlexc}}{{#1};{#2};\AbsABT{#3}{#4}}}
+\newcommand{\exchdlcst}[4]{\kwop{hdlexc}{#1}\kwbin{ow}\varinexcst{#2}{#3}\casebrcst{#4}}
+
+\newcommand{\RefinesRel}[3]{{#2}\mathrel{\sqsubseteq^{#1}}{#3}}
+\newcommand{\exclrefcst}[1]{\overline{#1}}
+\newcommand{\SubRefRel}[3]{{#2}\leq^{#1}{#3}}
+\newcommand{\SubRefTyRel}[4]{{#3}\leq^{#1}_{#2}{#4}}
+
+\newcommand{\newclsabt}[3]{\OpABTp{\kw{newcls}}{#1}{\SymABT{#2}{#3}}}
+\newcommand{\newclscst}[3]{\kwop{cls}\Has{#2}{#1}\kwbin{in}{#3}}
+
+\newcommand{\newclscmdabt}[3]{\OpABT{\kw{newcls}}{#1;\SymABT{#2}{#3}}}
+\newcommand{\newclscmdcst}[3]{\kwop{exc}{#2}\kwbin{of}{#1}\kwbin{in}{#3}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

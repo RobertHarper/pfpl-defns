@@ -1,0 +1,40 @@
+\newcommand{\SubType}{\kw{<:}}
+\newcommand{\IsSubTyp}[2]{{#1}\mathrel{\SubType}{#2}}
+\newcommand{\IsSubTp}[2]{{#1}\mathbin{\SubType}{#2}}
+
+\newcommand{\IsSubTypW}[3]{{#1}\mathrel{\cdcolon}\IsSubTyp{#2}{#3}}
+
+\newcommand{\inttyabt}{\kw{int}}
+\newcommand{\inttycst}{\inttyabt}
+\newcommand{\rattyabt}{\kw{rat}}
+\newcommand{\rattycst}{\rattyabt}
+
+\newcommand{\realtyabt}{\kw{real}}
+\newcommand{\realtycst}{\realtyabt}
+
+\newcommand{\longtyabt}{\kw{long}}
+\newcommand{\longtycst}{\longtyabt}
+
+\newcommand{\floattyabt}{\kw{float}}
+\newcommand{\floattycst}{\floattyabt}
+\newcommand{\doubletyabt}{\kw{double}}
+\newcommand{\doubletycst}{\doubletyabt}
+
+\newcommand{\flplabt}[2]{\OpABT{\kw{+.}}{#1;#2}}
+\newcommand{\flplcst}[2]{{#1}\mathbin{\kw{+.}}{#2}}
+
+\newcommand{\ballabt}[3]{\OpABTp{\kw{all}}{#1}{\AbsABT{#2}{#3}}}
+\newcommand{\ballcst}[3]{\mathop{\forall}\IsSubTp{#2}{#1}\cddot{#3}}
+\newcommand{\bsomeabt}[3]{\OpABTp{\kw{some}}{#1}{\AbsABT{#2}{#3}}}
+\newcommand{\bsomecst}[3]{\mathop{\exists}\IsSubTp{#2}{#1}\cddot{#3}}
+
+\newcommand{\cldyntyabt}[1]{\OpInst{\kw{dyn}}{#1}}
+\newcommand{\cldyntycst}[1]{\cldyntyabt{#1}}
+
+\newcommand{\powkdabt}[1]{\OpABT{\kw{Pow}}{#1}}
+\newcommand{\powkdcst}[1]{\powkdabt{#1}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

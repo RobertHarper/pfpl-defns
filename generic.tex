@@ -1,0 +1,164 @@
+% generic definitions
+
+%\DeclareMathAccent{\colonaccent}{\mathpunct}{upright}{"3A}
+
+% semicolon in math mode is a binary operator
+\AtBeginDocument{\mathcode`\;=\numexpr\mathcode`\;-\string"4000\relax}
+
+% wavy division sign
+\stackMath
+\def\ccdot{\scalebox{1.15}{$\SavedStyle\cdot$}}
+\def\genericform#1#2{\stackunder[#1]{\stackon[#2]{\SavedStyle\sim}{\ccdot}}{\ccdot}}
+\def\altdiv{\mathrel{\ThisStyle{\mathchoice%
+  {\genericform{-2.5pt}{-1.5pt}}%
+  {\genericform{-2.5pt}{-1.5pt}}%
+  {\genericform{-2.0pt}{-1.1pt}}%
+  {\genericform{-1.4pt}{-0.8pt}}%
+}}}
+
+% \bigplus, \bigtimes
+\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathx}{m}{n}{
+    <5> <6> <7> <8> <9> <10> gen * mathx
+    <10.95> mathx10
+    <12> <14.4> <17.28> <20.74> <24.88> mathx12
+}{}
+\DeclareFontSubstitution{U}{mathx}{m}{n}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareMathSymbol{\bigplus} {\mathop}{mathx}{"90}
+\DeclareMathSymbol{\bigtimes}{\mathop}{mathx}{"91}
+
+\makeatletter
+
+\@ifpackageloaded{amsmath}{%
+    \@ifundefined{coprod@}{}{
+        \typeout{*** Applying amsmath patches to \protect\bigplus\space
+                    and \protect\bigtimes. ***}
+        \global\let\bigplus@\bigplus
+        \gdef\bigplus{\DOTSB\bigplus@\slimits@}
+        \global\let\bigtimes@\bigtimes
+        \gdef\bigtimes{\DOTSB\bigtimes@\slimits@}
+    }
+}{}
+
+\makeatother
+
+% argument handling
+\newcommand{\ifnull}[3]{\ifthenelse{\equal{#1}{}}{#2}{#3}}
+\newcommand{\ifpresent}[2]{\ifnull{#1}{}{#2}}
+\newcommand{\optional}[1]{\lbrack #1\rbrack}
+
+\newcommand{\Domain}[1]{\mathop{\mathit{dom}}(#1)}
+\newcommand{\Disjoint}[2]{{#1}\mathrel{\#}{#2}}
+\newcommand{\NotInDom}[2]{#1\notin\Domain{#2}}
+\newcommand{\NotIn}[2]{{#1}\notin{#2}}
+
+\newcommand{\eqdef}{\mathrel{\triangleq}}
+\newcommand{\isdef}{\eqdef}
+
+\newcommand{\bnfdef}{\coloncolonequals}
+\newcommand{\phantombnfdef}{\mathrel{\phantom{\bnfdef}}}
+\newcommand{\bnfalt}{\mathrel{\mid}}
+\newcommand{\phantombnfalt}{\mathrel{\phantom{\mid}}}
+
+\newcommand{\pto}{\rightharpoonup}
+\newcommand{\backsl}{\ensuremath{\backslash}}
+\newcommand{\turnstile}{\ensuremath{\vdash}}
+\newcommand{\entails}[1][]{\vdash_{#1}}
+%\newcommand{\twiddle}{\raisebox{-.1\height}{\texttildelow}}
+\newcommand{\twiddle}{\raisebox{.2ex}{\texttildelow}}
+%\newcommand{\twiddle}{\ensuremath{\tilde{\ }}}
+\newcommand{\caret}{\ensuremath{\hat{\ }}}
+\newcommand{\swap}[2]{#1\mathbin{\leftrightarrow}#2}
+
+\newcommand{\parens}[1]{(#1)}
+\newcommand{\braces}[1]{\{#1\}}
+\newcommand{\sqbracks}[1]{[#1]}
+\newcommand{\ptbracks}[1]{\langle #1\rangle}
+\newcommand{\brackets}[1]{\ptbracks{#1}}
+\newcommand{\corners}[1]{\ulcorner #1\urcorner}
+\newcommand{\dblptbracks}[1]{\langle\!\langle #1\rangle\!\rangle}
+\newcommand{\dblsqbracks}[1]{[\![#1]\!]}
+
+\newcommand{\kw}[1]{\ensuremath{\mathtt{#1}}}
+\newcommand{\kwop}[1]{\ensuremath{\mathop{\mathtt{#1}}}}
+\newcommand{\kwbin}[1]{\ensuremath{\mathbin{\mathtt{#1}}}}
+
+\newcommand{\cdcolon}{\kwbin{:}}
+\newcommand{\cdcoloncolon}{\kwbin{::}}
+\newcommand{\cdcomma}{\kw{,}}
+\newcommand{\cdperiod}{\kw{.}}
+\newcommand{\cddot}{\cdperiod}
+\newcommand{\cddotdot}{\kw{{.}{.}}}
+\newcommand{\cdsemi}{\kw{;}}
+\newcommand{\cdbar}{\kwbin{|}} %|
+\newcommand{\cdatsign}{\kw{@}}
+\newcommand{\cdunderscore}{\kw{\_}}
+\newcommand{\cdsharp}{\kw{\#}}
+\newcommand{\cddollar}{\kw{\$}}
+\newcommand{\cdtwiddle}{\kw{\~}}
+\newcommand{\cdhat}{\kw{\^{ }}}
+\newcommand{\cdstar}{\kw{*}}
+\newcommand{\cdamper}{\kw{\&}}
+\newcommand{\cdpar}{\kw{||}}
+\newcommand{\cdbackslash}{\kw{\backslash}}
+
+\newcommand{\seq}[2]{{#2}_1,\dots,{#2}_{#1}}
+\newcommand{\zeq}[2]{{#2}_0,\dots,{#2}_{#1-1}}
+\newcommand{\seqsep}[3]{{#3}_1\mathbin{#1}\dots\mathbin{#1}{#3}_{#2}}
+\newcommand{\zeqsep}[3]{{#3}_0\mathbin{#1}\dots\mathbin{#1}{#3}_{#2-1}}
+
+\newcommand{\cdparens}[1]{\kw{(}\,#1\,\kw{)}}
+\newcommand{\cdnoparens}[1]{#1}
+\newcommand{\noparens}[1]{#1}
+\newcommand{\cdcdc}{\kw{,}\dots\kw{,}}
+\newcommand{\cdcds}{\kw{;}\dots\kw{;}}
+\newcommand{\cdseq}[2]{#2_{1}\cdcdc #2_{#1}}
+\newcommand{\cdzeq}[2]{#2_{0}\cdcdc #2_{#1-1}}
+\newcommand{\cdsseq}[2]{#2_{1}\cdcds #2_{#1}}
+\newcommand{\cdszeq}[2]{#2_{0}\cdcds #2_{#1-1}}
+\newcommand{\cdpseq}[4]{{#3}_{1}{#2}{#4}_{1}\cdcdc{#3}_{#1}{#2}{#4}_{#1}}
+\newcommand{\cdpzeq}[4]{{#3}_{0}{#2}{#4}_{0}\cdcdc{#3}_{#1-1}{#2}{#4}_{#1-1}}
+\newcommand{\cdsqbracks}[1]{\kw{[}\,{#1}\,\kw{]}}
+\newcommand{\cdptbracks}[1]{\kw{\langle}\,{#1}\,\kw{\rangle}}
+\newcommand{\cdrdbracks}[1]{\cdparens{#1}}
+\newcommand{\cdbrackets}[1]{\cdptbracks{#1}}
+\newcommand{\cdbraces}[1]{\kw{\{}{#1}\kw{\}}}
+\newcommand{\cdcurlbracks}[1]{\cdbraces{#1}}
+
+% finite functions
+\newcommand{\pairff}[2]{{#1}\mathbin{\hookrightarrow}{#2}}
+\newcommand{\singff}[2]{\pairff{#1}{#2}}
+\newcommand{\empff}{\emptyset}
+\newcommand{\combff}[3][\otimes]{#2\mathbin{#1}#3}
+\newcommand{\extff}[4][\otimes]{#2\mathbin{#1}{\pairff{#3}{#4}}}
+\newcommand{\varextff}[3]{\extff{#1}{#2}{#3}} %obsolete
+\newcommand{\appff}[2]{{#1}\parens{#2}}
+\newcommand{\domff}[1]{\Domain{#1}}
+\newcommand{\disjff}[2]{\domff{#1}\cap\domff{#2}=\emptyset}
+\newcommand{\genff}[3]{\parens{{#2}\mathbin{\hookrightarrow}{#3}}_{{#2}\in{#1}}}  % was braces
+\newcommand{\Genff}[3]{#2\mathbin{\hookrightarrow}#3\mid #2\in #1}
+\newcommand{\explff}[4][\otimes]{\pairff{#3_{1}}{#4_{1}}\mathbin{#1}\dots\mathbin{#1}\pairff{#3_{#2}}{#4_{#2}}}
+
+% calligraphic capitals
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calG}{\mathcal{G}}
+\newcommand{\calI}{\mathcal{I}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\calY}{\mathcal{Y}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

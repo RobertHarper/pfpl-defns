@@ -1,0 +1,18 @@
+\ifthenelse{\boolean{symops}}{
+  \newcommand{\sometyabt}[2]{\OpABT{\exists}{\AbsABT{#1}{#2}}}
+}{
+  \newcommand{\sometyabt}[2]{\OpABT{\kw{some}}{\AbsABT{#1}{#2}}}
+}
+\newcommand{\sometycst}[2]{\exists\cdparens{{#1}{\cddot}{#2}}}
+
+\newcommand{\packabt}[4]{\OpABTp{\kw{pack}}{\AbsABT{#1}{#2}}{#3;#4}}
+\newcommand{\packcst}[4]{\spackcst{\sometycst{#1}{#2}}{#3}{#4}}
+\newcommand{\spackcst}[3]{\kwop{pack}{#2}\kwop{with}{#3}\kwop{as}{#1}}
+\newcommand{\opnabt}[7]{\OpABTp{\kw{open}}{\AbsABT{#1}{#2};#3}{#4;\AbsABT{#5,#6}{#7}}}
+\newcommand{\opncst}[7]{\kwop{open}{#4}\kwop{as}{#5}\kwop{with}{#6}{\cdcolon}{#2}\kwop{in}{#7}}
+\newcommand{\sopncst}[5]{\kwop{open}{#2}\kwop{as}{#3}\kwop{with}{#4}\kwop{in}{#5}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

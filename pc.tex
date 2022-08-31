@@ -1,0 +1,120 @@
+\newcommand{\nullevtabt}{\kw{null}}
+\newcommand{\nullevtcst}{\textbf{0}}
+\newcommand{\sumevtabt}[2]{\OpABT{\kw{or}}{#1;#2}}
+\newcommand{\sumevtcst}[2]{{#1}\mathbin{\kw{+}}{#2}}
+\newcommand{\commevtabt}[2]{\OpABT{\kw{comm}}{#1;#2}}
+\newcommand{\commevtcst}[2]{{#1}; {#2}}
+
+\newcommand{\srcvevtabt}[2]{\OpABT{\OpInst{\kw{que}}{#1}}{#2}}
+\newcommand{\srcvevtcst}[2]{\mathord{\kwop{?}}{#1}; {#2}}
+\newcommand{\ssndevtabt}[2]{\OpABT{\OpInst{\kw{sig}}{#1}}{#2}}
+\newcommand{\ssndevtcst}[2]{\mathord{\kwop{!}}{#1}; {#2}}
+
+\newcommand{\sndactabt}[1]{\OpInst{\kw{sig}}{#1}}
+\newcommand{\sndactcst}[1]{{#1}\mathop{!}}
+\newcommand{\rcvactabt}[1]{\OpInst{\kw{que}}{#1}}
+\newcommand{\rcvactcst}[1]{{#1}\mathop{?}}
+
+\newcommand{\silactabt}{\mathop{\varepsilon}}
+\newcommand{\silactcst}{\mathop{\varepsilon}}
+
+\newcommand{\complact}[1]{\overline{#1}} %complementary action
+
+\newcommand{\syncprocabt}[1]{\OpABT{\kw{await}}{#1}}
+\newcommand{\syncproccst}[1]{\mathop{\cddollar}{#1}}
+
+\newcommand{\stopprocabt}{\kw{stop}}
+\newcommand{\stopproccst}{\textbf{1}}
+
+\newcommand{\concprocabt}[2]{\OpABT{\kw{conc}}{#1;#2}}
+\newcommand{\concproccst}[2]{{#1}\mathbin{\otimes}{#2}} % was \parallel
+
+\newcommand{\nullproccst}{\textbf{0}}
+\newcommand{\sumproccst}[2]{{#1}\mathbin{+}{#2}}
+
+% query and signal for automata
+\newcommand{\queprocabt}[2]{\OpABTp{\kw{?}}{#1}{#2}}
+\newcommand{\queproccst}[2]{\kwop{?}{#1}; {#2}}
+\newcommand{\sigprocabt}[2]{\OpABTp{\kw{!}}{#1}{#2}}
+\newcommand{\sigproccst}[2]{\kwop{\kw{!}}{#1}; {#2}}
+
+\newcommand{\newprocabt}[2]{\OpABT{\kw{newch}}{\SymABT{#1}{#2}}}
+\newcommand{\newproccst}[2]{\mathop{\nu}{\SymABT{#1}{#2}}}
+
+\newcommand{\trcvevtabt}[4]{\OpABT{\OpInst{\kw{rcv}}{#2}}{\AbsABT{#3}{#4}}}
+\newcommand{\trcvevtcst}[4]{\kwop{?}{#2}\cdparens{\AbsABT{#3}{#4}}}
+\newcommand{\tsndevtabt}[4]{\OpABT{\OpInst{\kw{snd}}{#2}}{#3;#4}}
+\newcommand{\tsndevtcst}[4]{\kwop{!}{#2}\cdparens{{#3};{#4}}}
+
+\newcommand{\tnewprocabt}[3]{\OpABTp{\kw{newch}}{#1}{\SymABT{#2}{#3}}}
+\newcommand{\tnewproccst}[3]{\mathop{\nu}{\SymABT{\HasSym{#2}{#1}}{#3}}}
+\newcommand{\gnewproccst}[2]{\mathop{\nu}{#1}\cdbraces{#2}}
+
+\newcommand{\trcvactabt}[3]{\OpABT{\OpInst{\kw{rcv}}{#2}}{#3}}
+\newcommand{\tsndactabt}[3]{\OpABT{\OpInst{\kw{snd}}{#2}}{#3}}
+\newcommand{\trcvactcst}[3]{{#2}\mathbin{?}{#3}}
+\newcommand{\tsndactcst}[3]{{#2}\mathbin{!}{#3}}
+
+\newcommand{\rcvevtabt}[3]{\OpABT{\OpInst{\kw{rcv}}{#1}}{\AbsABT{#2}{#3}}}
+\newcommand{\rcvevtcst}[3]{\kwop{?}{#1}\cdparens{\AbsABT{#2}{#3}}}
+\newcommand{\sndevtabt}[3]{\OpABTp{\OpInst{\kw{snd}}{#1}}{#2}{#3}}
+\newcommand{\sndevtcst}[3]{\kwop{!}{#1}\cdparens{{#2}; {#3}}}
+
+\newcommand{\accevtabt}[2]{\OpABT{\kw{acc}}{\AbsABT{#1}{#2}}}
+\newcommand{\accevtcst}[2]{\kwop{?}\cdparens{\AbsABT{{#1}}{#2}}}
+
+\newcommand{\chtyabt}[1]{\OpABT{\kw{chan}}{#1}}
+\newcommand{\chtycst}[1]{{#1}\,\kw{chan}}
+\newcommand{\chabt}[2]{\OpInst{\kw{chref}}{#2}}
+\newcommand{\chcst}[2]{\mathop{\cdamper}{#2}}
+
+\newcommand{\drcvevtabt}[4]{\OpABT{\kw{rcvref}}{#2;\AbsABT{#3}{#4}}}
+\newcommand{\drcvevtcst}[4]{\kwop{??}\cdparens{#2;\AbsABT{#3}{#4}}}
+\newcommand{\dsndevtabt}[4]{\OpABT{\kw{sndref}}{#2;#3;#4}}
+\newcommand{\dsndevtcst}[4]{\kwop{!!}\cdparens{#2;{#3};{#4}}}
+
+\newcommand{\asndprocabt}[2]{\OpABT{\OpInst{\kw{asnd}}{#1}}{#2}}
+\newcommand{\asndproccst}[2]{\kwop{!}{#1}\cdparens{#2}}
+
+\newcommand{\arcvproccst}[3]{\syncproccst{\rcvevtcst{#1}{#2}{#3}}}
+
+\newcommand{\tasndprocabt}[3]{\OpABT{\OpInst{\kw{asnd}}{#2}}{#3}}
+\newcommand{\tasndproccst}[3]{\kwop{!}{#2\cdparens{#3}}}
+
+\newcommand{\dasndprocabt}[3]{\OpABT{\kw{sndref}}{#2;#3}}
+\newcommand{\dasndproccst}[3]{\kwop{!!}\cdparens{#2; #3}}
+
+\newcommand{\emitprocabt}[1]{\OpABT{\kw{emit}}{#1}}
+\newcommand{\emitproccst}[1]{\kwop{!}{#1}}
+\newcommand{\bnewprocabt}[2]{\OpABT{\kw{newch}}{\SymABT{#1}{#2}}}
+\newcommand{\bnewproccst}[2]{\mathop{\nu}{\SymABT{#1}{#2}}}
+
+\newcommand{\replprocabt}[1]{\OpABT{\kw{repl}}{#1}}
+\newcommand{\replproccst}[1]{\kwop{*}{#1}}
+
+\newcommand{\fixprocabt}[2]{\OpABT{\kw{fix}}{\AbsABT{#1}{#2}}}
+\newcommand{\fixproccst}[2]{\mu\AbsABT{#1}{#2}}
+
+\newcommand{\StrCong}[2]{{#1}\equiv{#2}}
+\newcommand{\LStrCong}[3]{{#2}\equiv_{#1}{#3}}
+
+\newcommand{\IsEvt}[1]{\JPost{#1}{\textsf{event}}}
+\newcommand{\IsProc}[1]{\JPost{#1}{\textsf{proc}}}
+\newcommand{\IsAct}[1]{\JPost{#1}{\textsf{action}}}
+
+\newcommand{\uatchan}[2]{{#1}\mathop{\cdatsign}{#2}}
+
+\newcommand{\choiceprocabt}[2]{\OpABT{\kw{choose}}{#1;#2}}
+\newcommand{\choiceproccst}[2]{{#1}+{#2}}
+
+\newcommand{\seqprocabt}[2]{\OpABT{\kw{seq}}{#1;#2}}
+\newcommand{\seqproccst}[2]{{#1}\kwop{;}{#2}}
+
+\newcommand{\termswith}[2]{{#1}\triangleright{#2}}
+
+\newcommand{\nor}{\mathbin{\overline{\vee}}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

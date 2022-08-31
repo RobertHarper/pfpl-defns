@@ -1,0 +1,75 @@
+\ifthenelse{\boolean{symops}}{
+  \newcommand{\indtyabt}[2]{\OpABT{\mu}{\AbsABT{#1}{#2}}}
+}{
+  \newcommand{\indtyabt}[2]{\OpABT{\kw{mu}}{\AbsABT{#1}{#2}}}
+}
+\newcommand{\indtycstg}[1]{\OpABT{\mu}{#1}}
+\newcommand{\indtycst}[2]{\indtycstg{\AbsABT{#1}{#2}}}
+
+\newcommand{\indinabt}[3]{\OpABTp{\kw{fold}}{\AbsABT{#1}{#2}}{#3}}
+\newcommand{\indincstg}[2][]{\OpABTp{\kw{fold}}{#1}{#2}}  % how to omit param when opt arg omitted?
+\newcommand{\indincst}[3]{\indincstg[\AbsABT{#1}{#2}]{#3}}
+\newcommand{\sindincst}[1]{\OpABT{\kw{fold}}{#1}}
+\newcommand{\indrecabt}[5]{\OpABTp{\kw{rec}}{\AbsABT{#1}{#2}}{\AbsABT{#3}{#4};{#5}}}
+\newcommand{\indreccstg}[3]{\OpABTp{\kw{rec}}{#1}{#2;#3}}
+\newcommand{\indreccst}[5]{\indreccstg{\AbsABT{#1}{#2}}{\AbsABT{#3}{#4}}{#5}}
+\newcommand{\indreccstx}[6]{\indreccstg{\AbsABT{#1}{#2};{#3}}{\AbsABT{#4}{#5}}{#6}}
+
+\newcommand{\indrecnatcst}[4]{\kw{rec}_{\nattycst}\cdparens{\AbsABT{#2}{#3};{#4}}}
+\newcommand{\indinnatcst}[1]{\kw{fold}_{\nattycst}\cdparens{#1}}
+\newcommand{\listtyabt}[1]{\OpABT{\kw{list}}{#1}}
+\newcommand{\listtycst}[1]{{#1}\,\kw{list}}
+\newcommand{\natlisttyabt}{\kw{natlist}}
+\newcommand{\natlisttycst}{\kw{natlist}}
+\newcommand{\nilexabt}{\kw{nil}}
+\newcommand{\nilexcst}{\nilexabt}
+\newcommand{\consexabt}[2]{\OpABT{\kw{cons}}{#1;#2}}
+\newcommand{\consexcst}[2]{\consexabt{#1}{#2}}
+\newcommand{\listcaseexabt}[6]{\OpABTp{\kw{case}}{#1}{#2;#3;\AbsABT{#4,#5}{#6}}}
+\newcommand{\listcaseexcst}[6]{\kwop{case}{#2}\,\cdbraces{\nilexcst\casebrcst{#3}\casesepcst\consexcst{#4}{#5}\casebrcst{#6}}}
+\newcommand{\listrecexabt}[6]{\OpABTp{\kw{rec}_{\kw{list}}}{#1}{#2;#3;\AbsABT{#4;#5}{#6}}}
+\newcommand{\listrecexcst}[6]{\kw{rec}_{\kw{list}}\,{#2}\,\cdbraces{\nilexcst\casebrcst{#3}\casesepcst\consexcst{#4}{#5}\casebrcst{#6}}}
+
+\ifthenelse{\boolean{symops}}{
+  \newcommand{\coityabt}[2]{\OpABT{\nu}{\AbsABT{#1}{#2}}}
+}{
+  \newcommand{\coityabt}[2]{\OpABT{\kw{nu}}{\AbsABT{#1}{#2}}}
+}
+\newcommand{\coitycstg}[1]{\OpABT{\nu}{#1}}
+\newcommand{\coitycst}[2]{\coitycstg{\AbsABT{#1}{#2}}}
+
+\newcommand{\coioutabt}[3]{\OpABTp{\kw{unfold}}{\AbsABT{#1}{#2}}{#3}}
+\newcommand{\coioutcstg}[2][]{\OpABTp{\kw{unfold}}{#1}{#2}} % how to omit param when opt arg omitted?
+\newcommand{\coioutcst}[3]{\coioutcstg[\AbsABT{#1}{#2}]{#3}}
+\newcommand{\scoioutcst}[1]{\OpABT{\kw{unfold}}{#1}}
+\newcommand{\coigenabt}[5]{\OpABTp{\kw{gen}}{\AbsABT{#1}{#2}}{\AbsABT{#3}{#4};{#5}}}
+\newcommand{\coigencstg}[3]{\OpABTp{\kw{gen}}{#1}{#2;#3}}
+\newcommand{\coigencst}[5]{\coigencstg{\AbsABT{#1}{#2}}{\AbsABT{#3}{#4}}{#5}}
+\newcommand{\coigencstx}[6]{\coigencstg{\AbsABT{#1}{#2};{#3}}{\AbsABT{#4}{#5}}{#6}}
+
+\newcommand{\itreetycst}{\kw{itree}}
+\newcommand{\iviewcst}[1]{\OpABT{\kw{view}}{#1}}
+\newcommand{\itreegencst}[3]{\kw{gen}_{\itreetycst}\,{#2}\,\kw{is}\,{#1}\,\kw{in}\,{#3}}
+
+\newcommand{\streamtycst}{\kw{stream}}
+\newcommand{\strgencst}[4]{\kw{gen}_{\streamtycst}\,{#2}\,\kw{is}\,{#1}\,\kw{in}\,\cdptbracks{\pairff{\kw{hd}}{#3}\cdcomma\pairff{\kw{tl}}{#4}}}
+\newcommand{\shdcst}[1]{\OpABT{\kw{hd}}{#1}}
+\newcommand{\stlcst}[1]{\OpABT{\kw{tl}}{#1}}
+\newcommand{\stlncst}[2]{\OpABT{\kw{tl}^{(#1)}}{#2}}
+\newcommand{\seqtycst}{\kw{seq}}
+\newcommand{\coigenstrcst}[3]{\kw{gen}_{\streamtycst}\cdparens{\AbsABT{#1}{#2};{#3}}}
+\newcommand{\coioutstrcst}[1]{\kw{unfold}_{\streamtycst}\cdparens{#1}}
+
+\newcommand{\conattycst}{\kw{conat}}
+\newcommand{\omegaexcst}{\infty}
+\newcommand{\cozcst}{\tilde{\kw{z}}}
+\newcommand{\coscst}{\tilde{\kw{s}}}
+\newcommand{\coigenconatcst}[3]{\kw{gen}_{\conattycst}\cdparens{#3;\AbsABT{#1}{#2}}}
+\newcommand{\coioutconatcst}[1]{\kw{unfold}_{\conattycst}\cdparens{#1}}
+
+\newcommand{\sigtwotycst}{\kw{signal}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

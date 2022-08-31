@@ -1,0 +1,36 @@
+\newcommand{\FunEvalsTo}[3]{{#1}\mathrel{\Downarrow}\AbsABT{#2}{#3}}
+\newcommand{\FunEvalsToHO}[3]{{#2}\vargen \fappabt{#1}{#2}\evalsto{#3}}
+
+\ifthenelse{\boolean{symops}}{
+  \newcommand{\arrtyabt}[2]{\OpABT{\to}{#1;#2}}
+}{
+  \newcommand{\arrtyabt}[2]{\OpABT{\kw{arr}}{#1;#2}}
+}
+\newcommand{\arrtycst}[2]{{#1}\mathrel{\to}{#2}}
+\newcommand{\lamabt}[3]{\OpABTp{\lambda}{#1}{\AbsABT{#2}{#3}}}
+\newcommand{\lamcst}[3]{\mathop{\lambda}\cdparens{\IsOfVar{#2}{#1}}\,{#3}}
+\newcommand{\appabt}[2]{\OpABT{\kw{ap}}{#1;#2}}
+\newcommand{\appcst}[2]{{#1}\cdparens{#2}}
+
+\newcommand{\letabt}[4]{\OpABTp{\kw{let}}{#1}{#2;\AbsABT{#3}{#4}}}
+\newcommand{\letcst}[4]{\kwop{let}\IsOfVar{#3}{#1}\kwop{be}{#2}\kwop{in}{#4}}
+\newcommand{\uletabt}[3]{\OpABT{\kw{let}}{#1;\AbsABT{#2}{#3}}}
+\newcommand{\uletcst}[3]{\kwop{let}{#2}\kwop{be}{#1}\kwop{in}{#3}}
+
+\newcommand{\fdefabt}[6]{\OpABTp{\kw{fun}}{#1;#2}{\AbsABT{#3}{#4};\AbsABT{#5}{#6}}}
+\newcommand{\fdefcst}[6]{\kwop{fun}{#5}\IsOfVar{\cdparens{\IsOfVar{#3}{#1}}}{#2}\mathbin{\kw{=}}{#4}\kwop{in}{#6}}
+\newcommand{\fappabt}[2]{\OpABTp{\kw{apply}}{#1}{#2}}
+\newcommand{\fappcst}[2]{#1\cdparens{#2}}
+\newcommand{\fsubst}[3]{\dblsqbracks{#1\mathord{/}#2}{#3}}
+
+\newcommand{\exptycst}[2]{{#1}^{#2}}
+
+\newcommand{\nlamabt}[5]{\OpABTp{\lambda^{#1}}{#2_1;\dots;#2_{#1}}{\AbsABT{#3,{#4}_1}{#5_1};\dots;\AbsABT{#3,{#4}_{#1}}{#5_{#1}}}}
+\newcommand{\nlamcst}[5]{\nlamabt{#1}{#2}{#3}{#4}{#5}}
+
+\newcommand{\narrtycst}[3]{\prodtycst{\parrtycst{#2_1}{#3_1}}{\prodtycst{\dots}{\parrtycst{#2_{#1}}{#3_{#1}}}}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

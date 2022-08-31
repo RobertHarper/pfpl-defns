@@ -1,0 +1,21 @@
+\newcommand{\IsPolynom}[2]{\JPost{\AbsABT{#1}{#2}}{\textsf{poly}}}
+\newcommand{\IsPos}[2]{\JPost{\AbsABT{#1}{#2}}{\textsf{pos}}}
+\newcommand{\IsNNeg}[2]{\JPost{\AbsABT{#1}{#2}}{\textsf{non-neg}}}
+\newcommand{\IsNeg}[2]{\JPost{\AbsABT{#1}{#2}}{\textsf{neg}}}
+
+\newcommand{\OpActEx}[4]{\OpABTp{\kw{map}}{\AbsABT{#1}{#2}}{\AbsABT{#3}{#4}}}
+
+\newcommand{\ggenexabt}[6]{\OpABTp{\kw{map}^{#1}}{\AbsABT{#2}{#3}}{\AbsABT{#4}{#5}}\cdparens{#6}}
+\newcommand{\ggenexcst}[6]{\OpABTp{\kw{map}^{#1}}{\AbsABT{#2}{#3}}{\AbsABT{#4}{#5}}\cdparens{#6}}
+\newcommand{\genexabt}[5]{\ggenexabt{}{#1}{#2}{#3}{#4}{#5}}
+\newcommand{\genexcst}[5]{\ggenexcst{}{#1}{#2}{#3}{#4}{#5}}
+\newcommand{\genexposabt}[5]{\ggenexabt{\kw{+}}{#1}{#2}{#3}{#4}{#5}}
+\newcommand{\genexnegabt}[5]{\ggenexabt{\kw{-}}{#1}{#2}{#3}{#4}{#5}}
+\newcommand{\genexnnegabt}[5]{\ggenexabt{\kw{--}}{#1}{#2}{#3}{#4}{#5}}
+
+\newcommand{\genexmapcst}[4]{\OpABTp{\kw{map}}{\AbsABT{#1}{#2}}{\AbsABT{#3}{#4}}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

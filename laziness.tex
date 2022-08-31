@@ -1,0 +1,28 @@
+\newcommand{\derefabt}[1]{\OpABT{\kw{via}}{#1}}
+\newcommand{\derefcst}[1]{\getvarcst{#1}}
+
+\newcommand{\susptyabt}[1]{\OpABT{\kw{susp}}{#1}}
+\newcommand{\susptycst}[1]{{#1}\,\kw{susp}}
+
+\newcommand{\susprefabt}[1]{\OpInst{\kw{cell}}{#1}}
+\newcommand{\susprefcst}[1]{\cdamper{#1}}
+
+\newcommand{\delayabt}[3]{\OpABTp{\kw{susp}}{#1}{\AbsABT{#2}{#3}}}
+\newcommand{\delaycst}[3]{\kwop{susp}{#2}\kwop{is}{#3}}
+
+\newcommand{\forceabt}[1]{\OpABT{\kw{force}}{#1}}
+\newcommand{\forcecst}[1]{\forceabt{#1}}
+
+\newcommand{\letforceabt}[3]{\OpABT{\kw{force}}{#1;\AbsABT{#2}{#3}}}
+\newcommand{\letforcecst}[3]{\kwop{force}{#1}\kwop{as}{#2}\kwop{in}{#3}}
+
+\newcommand{\BlackHole}{\bullet}
+
+\newcommand{\NState}[3]{\mathop{\nu}{#2}\,\braces{\,{#3}\mathrel{\parallel}{#1}\,}}
+
+\newcommand{\Loops}[1]{\JPost{#1}{\textsf{loops}}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

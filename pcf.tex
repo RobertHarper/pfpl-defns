@@ -1,0 +1,43 @@
+\newcommand{\natcaseabt}[4]{\OpABTp{\kw{ifz}}{#2;\AbsABT{#3}{#4}}{#1}}
+\newcommand{\natcasecst}[4]{\kwop{ifz}{#1}\,\cdbraces{\zerocst\casebrcst{#2}\casesepcst\succcst{#3}\casebrcst{#4}}}
+
+\newcommand{\ifzabt}[5]{\OpABTp{\kw{ifz}}{#1}{#2;#3;\AbsABT{#4}{#5}}}
+\newcommand{\ifzcst}[5]{\ifzabt{#1}{#2}{#3}{#4}{#5}}
+\newcommand{\varifzabt}[4]{\OpABT{\kw{ifz}}{#1;#2;\AbsABT{#3}{#4}}}
+
+\newcommand{\genrecabt}[3]{\OpABTp{\kw{fix}}{#1}{\AbsABT{#2}{#3}}}
+\newcommand{\genreccst}[3]{\kwop{fix}{#2}\cdcolon{#1}\kwop{is}{#3}}
+\newcommand{\sgenreccst}[2]{\kwop{fix}{#1}\kwop{is}{#2}}
+
+\newcommand{\bddrecabt}[4]{\OpABTp{\kw{fix}^{#1}}{#2}{\AbsABT{#3}{#4}}}
+\newcommand{\bddreccst}[4]{\mathop{\kw{fix}^{#1}}{#3}\cdcolon{#2}\mathbin{\kwop{is}}{#4}}
+
+\ifthenelse{\boolean{symops}}{
+  \newcommand{\parrtyabt}[2]{\OpABT{\rightharpoonup}{#1;#2}}
+}{
+  \newcommand{\parrtyabt}[2]{\OpABT{\kw{parr}}{#1;#2}}
+}
+\newcommand{\parrtycst}[2]{{#1}\mathbin{\rightharpoonup}{#2}}
+
+\newcommand{\funabt}[5]{\OpABTp{\kw{fun}}{#1;#2}{\AbsABT{#3}{\AbsABT{#4}{#5}}}}
+\newcommand{\funcst}[5]{\kwop{fun}{#3}\cdparens{{#4}{\cdcolon}{#1}}{\cdcolon}{#2}\kwop{is}{#5}}
+\newcommand{\pappabt}[2]{\OpABT{\kw{ap}}{#1;#2}}
+\newcommand{\pappcst}[2]{\appcst{#1}{#2}}
+
+\newcommand{\empenv}{\bullet}
+\newcommand{\extenv}[3]{{#1},{#2}{=}{#3}}
+
+\newcommand{\expclo}[1]{\widehat{#1}}
+\newcommand{\expclois}[2]{\expclo{#1}{=}{#2}}
+\newcommand{\expenv}[2]{\widehat{#1}\parens{#2}}
+\newcommand{\expenvis}[3]{\expenv{#1}{#2}{=}{#3}}
+
+\newcommand{\cutoff}[2]{{#1}^{(#2)}}
+
+\newcommand{\lnattyabt}{\kw{lnat}}
+\newcommand{\lnattycst}{\lnattyabt}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

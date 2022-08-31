@@ -1,0 +1,59 @@
+\newcommand{\idcst}[1]{#1}
+\newcommand{\idop}[1]{\OpInst{\kw{id}}{#1}}
+\newcommand{\idast}[1]{\idop{#1}}
+\newcommand{\numcst}[1]{#1}
+\newcommand{\numop}[1]{\OpInst{\kw{num}}{#1}}
+\newcommand{\numast}[1]{\numop{#1}}
+\newcommand{\numabt}[1]{\numast{#1}}
+\newcommand{\pluscst}[2]{{#1}\mathbin{\kw{+}}{#2}}
+\newcommand{\plusop}{\kw{plus}}
+\newcommand{\plusast}[2]{\OpABT{\plusop}{#1;#2}}
+\newcommand{\plusabt}[2]{\plusast{#1}{#2}}
+\newcommand{\timesop}{\kw{times}}
+\newcommand{\timescst}[2]{{#1}\mathbin{\kw{*}}{#2}}
+\newcommand{\timesast}[2]{\OpABT{\timesop}{#1;#2}}
+\newcommand{\timesabt}[2]{\timesast{#1}{#2}}
+\newcommand{\strcst}[1]{\kw{"}{#1}\kw{"}}
+\newcommand{\strop}[1]{\OpInst{\kw{str}}{#1}}
+\newcommand{\strast}[1]{\strop{#1}}
+\newcommand{\strabt}[1]{\strast{#1}}
+\newcommand{\catcst}[2]{{#1}\mathbin{\cd{\^{ }}}{#2}}
+\newcommand{\catop}{\kw{cat}}
+\newcommand{\catast}[2]{\OpABT{\catop}{#1;#2}}
+\newcommand{\catabt}[2]{\catast{#1}{#2}}
+\newcommand{\lencst}[1]{\cdbar {#1}\cdbar}
+\newcommand{\lenop}{\kw{len}}
+\newcommand{\lenast}[1]{\OpABT{\lenop}{#1}}
+\newcommand{\lenabt}[1]{\lenast{#1}}
+\newcommand{\letbecst}[3]{\kwop{let}{#2}\kwop{be}{#1}\kwop{in}{#3}}
+\newcommand{\letastop}[1]{\OpInst{\kw{let}}{#1}}
+\newcommand{\letbeast}[3]{\OpABT{\letastop{#1}}{#2;#3}}
+\newcommand{\letabtop}{\kw{let}}
+\newcommand{\letbeabt}[3]{\OpABT{\letabtop}{#1;\AbsABT{#2}{#3}}}
+
+\newcommand{\castabt}[2]{\OpABTp{\kw{cast}}{#2}{#1}}
+\newcommand{\castcst}[2]{{#1}\mathord{\kw{:}}{#2}}
+
+\newcommand{\numty}{\kw{num}}
+\newcommand{\numtyabt}{\numty}
+\newcommand{\numtycst}{\numty}
+\newcommand{\strty}{\kw{str}}
+\newcommand{\strtyabt}{\strty}
+\newcommand{\strtycst}{\strty}
+
+\newcommand{\quoabt}[2]{\OpABT{\kw{div}}{#1;#2}}
+
+\newcommand{\rteabt}{\kw{error}}
+\newcommand{\rtecst}{\rteabt}
+
+\newcommand{\rtvabt}[1]{\OpABT{\kw{ok}}{#1}}
+\newcommand{\rtvcst}[1]{\rtvabt{#1}}
+
+\newcommand{\wrongabt}{\kw{wrong}}
+\newcommand{\wrongcst}{\wrongabt}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

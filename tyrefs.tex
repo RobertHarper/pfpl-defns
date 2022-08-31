@@ -1,0 +1,69 @@
+\newcommand{\toprefabt}[1]{\top}
+\newcommand{\toprefcst}[1]{\top}
+\newcommand{\topreftyabt}[1]{\OpABTn{\top}{#1}}
+\newcommand{\topreftycst}[1]{\top_{#1}}
+\newcommand{\andrefabt}[3]{\OpABT{\wedge}{#2; #3}}
+\newcommand{\andrefcst}[3]{{#2}\wedge{#3}}
+\newcommand{\andreftyabt}[3]{\OpABTp{\wedge}{#1}{#2; #3}}
+\newcommand{\andreftycst}[3]{{#2}\wedge_{#1}{#3}}
+\newcommand{\botrefabt}{\bot}
+\newcommand{\botrefcst}{\bot}
+\newcommand{\orrefabt}[2]{\OpABT{\vee}{#1; #2}}
+\newcommand{\orrefcst}[2]{{#1}\vee{#2}}
+\newcommand{\orreftyabt}[3]{\OpABTp{\vee}{#1}{#2; #3}}
+\newcommand{\orreftycst}[3]{{#2}\vee_{#1}{#3}}
+\newcommand{\voidrefabt}{\OpABT{\emptyset}}
+\newcommand{\voidrefcst}{\emptyset}
+\newcommand{\voidreftyabt}[1]{\OpABT{\emptyset}{#1}}
+\newcommand{\voidreftycst}[1]{\emptyset_{#1}}
+
+\newcommand{\prodrefabt}[2]{\prodtyabt{#1}{#2}}
+\newcommand{\prodrefcst}[2]{\prodtycst{#1}{#2}}
+\newcommand{\genprodrefcst}[3]{\genprodcst{#1}{#2}{#3}}
+\newcommand{\sumrefabt}[2]{\sumtyabt{#1}{#2}}
+\newcommand{\sumrefcst}[2]{\sumtycst{#1}{#2}}
+\newcommand{\gensumrefcst}[3]{\gensumcst{#1}{#2}{#3}}
+\newcommand{\arrrefabt}[2]{\parrtyabt{#1}{#2}}
+\newcommand{\arrrefcst}[2]{\parrtycst{#1}{#2}}
+\newcommand{\cmdrefabt}[1]{\gcmdtyabt{#1}}
+\newcommand{\cmdrefcst}[1]{\gcmdtycst{#1}}
+
+\newcommand{\foldrefabt}[3]{\foldexabt{#1}{#2}{#3}}
+\newcommand{\foldrefcst}[3]{\foldexcst{#1}{#2}{#3}}
+\newcommand{\inlrefabt}[3]{\inlexabt{#1}{#2}{#3}}
+\newcommand{\inlrefcst}[2]{\inlexcst{#1}{#2}}
+\newcommand{\inrrefabt}[3]{\inrexabt{#1}{#2}{#3}}
+\newcommand{\inrrefcst}[2]{\inrexcst{#1}{#2}}
+\newcommand{\geninjrefabt}[3]{\geninjabt{#1}{#2}{#3}}
+\newcommand{\geninjrefcst}[3]{\geninjcst{#1}{#2}{#3}}
+
+\newcommand{\fldrefcst}[2]{\fldtycst{#1}{#2}}
+
+\newcommand{\newrefabt}[2]{\dnewabt{#1}{#2}}
+\newcommand{\newrefcst}[2]{\dnewcst{#1}{#2}}
+\newcommand{\dynrefabt}{\topreftyabt{\dyntyabt}}
+\newcommand{\dynrefcst}{\topreftycst{\dyntycst}}
+\newcommand{\numrefabt}[1]{\newrefabt{\dnumtag}{#1}}
+\newcommand{\numrefcst}[1]{\newrefcst{\dnumtag}{#1}}
+\newcommand{\funrefabt}[1]{\newrefabt{\dfuntag}{#1}}
+\newcommand{\funrefcst}[1]{\newrefcst{\dfuntag}{#1}}
+
+\newcommand{\dyntodyntycst}{\parrtycst{\dyntycst}{\dyntycst}}
+
+\newcommand{\trrefabt}{\OpABTn{\kw{bool}}{\kw{true}}}
+\newcommand{\trrefcst}{\kw{true}}
+\newcommand{\farefabt}{\OpABTn{\kw{bool}}{\kw{false}}}
+\newcommand{\farefcst}{\kw{false}}
+
+\newcommand{\ifofclabt}[5]{\OpABT{\OpInst{\kw{ifofcl}}{#1}}{{#2};\AbsABT{#3}{#4}; {#5}}}
+
+\newcommand{\Refines}[2]{{#1}\mathrel{\sqsubseteq}{#2}}
+\newcommand{\SubRef}[2]{{#1}\leq{#2}}
+\newcommand{\SubRefTy}[3]{{#2}\leq_{#1}{#3}}
+\newcommand{\Sats}[3]{{#2}\in_{#1}{#3}}
+\newcommand{\NotSats}[3]{{#2}\not\in_{#1}{#3}}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

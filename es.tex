@@ -1,0 +1,39 @@
+% strings
+%\newcommand{\IsChar}[1]{\JPost{#1}{\mathsf{char}}}
+%\newcommand{\IsString}[2]{\JPost{#2}{\mathsf{str}_{#1}}}
+%\newcommand{\IsStr}[1]{\JPost{#1}{\mathsf{str}}}
+%\newcommand{\IsCharStr}[1]{\IsString{\mathsf{char}}{#1}}
+%\newcommand{\NullString}{\epsilon}
+%\newcommand{\ConsString}[2]{{#1}\cdot{#2}}
+%\newcommand{\SingString}[1]{\ConsString{#1}{\NullString}}
+%\newcommand{\SingStringStar}[1]{#1}
+\newcommand{\ConcString}[2]{{#1}\mathbin{\hat{\ }}{#2}}
+%\newcommand{\ConcStringStar}[2]{{#1}\,{#2}}
+%\newcommand{\IsConc}[3]{\JPPre{#1;#2;#3}{\mathsf{conc}}}
+\newcommand{\ConcIs}[3]{\ConcString{#1}{#2}={#3}}
+%\newcommand{\IsEqStr}[2]{{#1}={#2}}
+\newcommand{\LenIs}[2]{|{#1}|={#2}}
+
+\newcommand{\evalstosymbol}{\ensuremath{\Downarrow}}
+\newcommand{\evalsto}{\mathrel{\evalstosymbol}}
+\newcommand{\EvalsTo}[3][]{{#2}\evalsto^{#1}{#3}}
+\newcommand{\CostEvalsTo}[3]{\EvalsTo[#3]{#1}{#2}}
+
+\newcommand{\raisessymbol}{\ensuremath{\Uparrow}}
+\newcommand{\raises}{\mathrel{\raisessymbol}}
+\newcommand{\Raises}[3][]{{#2}\raises^{#1}{#3}}
+\newcommand{\CostRaises}[3]{\Raises[#3]{#1}{#2}}
+
+\newcommand{\evalsorraisessymbol}{\ensuremath{\Updownarrow}}
+\newcommand{\evalsorraises}{\mathrel{\evalsorraisessymbol}}
+\newcommand{\EvalsorRaises}[3][]{{#2}\evalsorraises^{#1}{#3}}
+\newcommand{\CostEvalsorRaises}[3]{\EvalsorRaises[#3]{#1}{#2}}
+
+\newcommand{\goeswrongsymbol}{\ensuremath{\mathbf{??}}}
+\newcommand{\GoesWrong}[1]{{#1}\,\goeswrongsymbol}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 

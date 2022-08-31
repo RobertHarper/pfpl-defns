@@ -1,0 +1,54 @@
+\newcommand{\IsSg}[1]{\JPost{#1}{\mathsf{sig}}}
+\newcommand{\IsOfSg}[2]{{#1}\mathrel{:}{#2}}
+\newcommand{\EqSg}{\mathrel{\equiv}}
+\newcommand{\IsEqSg}[2]{{#1}\EqSg{#2}}
+\newcommand{\SubSg}{\mathrel{\kw{<:}}}
+\newcommand{\IsSubSg}[2]{{#1}\SubSg{#2}}
+
+\newcommand{\IsProj}[1]{\JPost{#1}{\mathsf{projectible}}}
+
+\newcommand{\strsigabt}[3]{\OpABTp{\kw{sig}}{#1}{\AbsABT{#2}{#3}}}
+\newcommand{\strsigcst}[3]{\left\llbracket\IsOfKd{#2}{#1}; {#3}\right\rrbracket}
+
+\newcommand{\strmodabt}[2]{\OpABT{\kw{str}}{#1; #2}}
+\newcommand{\strmodcst}[2]{\left\llbracket{#1}; {#2}\right\rrbracket}
+
+\newcommand{\sealmodabt}[2]{\OpABTp{\kw{seal}}{#2}{#1}}
+\newcommand{\sealmodcst}[2]{{#1}\mathop{\upharpoonright}{#2}}
+
+\newcommand{\letmodabt}[4]{\OpABTp{\kw{let}}{#1}{#2;\AbsABT{#3}{#4}}}
+\newcommand{\letmodcst}[4]{\cdparens{\kwop{let}{#3}\kwop{be}{#2}\kwop{in}{#4}}\mathbin{\cdcolon}{#1}}
+
+\newcommand{\reptyabt}[1]{\OpABT{\kw{s}}{#1}}
+\newcommand{\reptycst}[1]{{#1}\cdot{\kw{s}}}
+\newcommand{\repvlabt}[1]{\OpABT{\kw{d}}{#1}}
+\newcommand{\repvlcst}[1]{{#1}\cdot\kw{d}}
+
+\newcommand{\strpkgabt}[1]{\OpABT{\kw{open}}{#1}}
+\newcommand{\strpkgcst}[1]{\kwop{open}{#1}}
+
+\newcommand{\subsigabt}[3]{\OpABT{\Sigma}{#1; \AbsABT{#2}{#3}}}
+\newcommand{\subsigcst}[3]{\sum\nolimits{#2}\mathbin{\cdcolon}{#1}\kwop{.}{#3}}
+\newcommand{\submodabt}[2]{\OpABT{\kw{sub}}{#1; #2}}
+\newcommand{\submodcst}[2]{\langle {#1};{#2}\rangle}
+
+\newcommand{\subfstabt}[1]{\OpABT{\kw{fst}}{#1}}
+\newcommand{\subfstcst}[1]{{#1}\cdot\kw{1}}
+\newcommand{\subsndabt}[1]{\OpABT{\kw{snd}}{#1}}
+\newcommand{\subsndcst}[1]{{#1}\cdot\kw{2}}
+
+\newcommand{\funsigabt}[3]{\OpABT{\Pi}{{#1};\AbsABT{#2}{#3}}}
+\newcommand{\funsigcst}[3]{\prod\nolimits{#2}\mathbin{\cdcolon}{#1}\kwop{.}{#3}}
+\newcommand{\funmodabt}[3]{\OpABTp{\lambda}{#1}{\AbsABT{#2}{#3}}}
+\newcommand{\funmodcst}[3]{\mathop{\lambda}{#2\mathbin{\cdcolon}{#1}}\kwop{.}{#3}}
+\newcommand{\funappabt}[2]{\OpABT{\kw{app}}{#1; #2}}
+\newcommand{\funappcst}[2]{\mathop{#1}{\cdparens{#2}}}
+
+\newcommand{\wheresigcst}[3]{{#1}\cdbraces{{#2}\colonequals{#3}}}
+\newcommand{\pathprojcst}[2]{{#1}\cdot{#2}}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "book"
+%%% End: 
