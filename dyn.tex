@@ -13,8 +13,8 @@
 \newcommand{\dsucccst}[1]{\dsuccabt{#1}}
 \newcommand{\dnatcaseabt}[4]{\natcaseabt{#1}{#2}{#3}{#4}}
 \newcommand{\dnatcasecst}[4]{\kw{ifz}\,{#1}\,\cdbraces{\dzerocst\casebrcst{#2}\casesepcst\dsucccst{#3}\casebrcst{#4}}}
-\newcommand{\dlamabt}[2]{\OpABT{\kw{lam}}{\AbsABT{#1}{#2}}}
-\newcommand{\dfunabt}[3]{\OpABT{\kw{fun}}{\AbsABT{#1,#2}{#3}}}
+\newcommand{\dfunabt}[2]{\OpABT{\kw{fun}}{\AbsABT{#1}{#2}}}
+\newcommand{\dlamabt}[2]{\dfunabt{#1}{#2}}
 \newcommand{\dlamcst}[2]{\ulamcst{#1}{#2}}
 \newcommand{\dappabt}[2]{\OpABT{\kw{ap}}{#1;#2}}
 \newcommand{\dappcst}[2]{\uappcst{#1}{#2}}
@@ -46,7 +46,7 @@
 \newcommand{\DIsS}[2]{\JInfix{#1}{\mathsf{is\_succ}}{#2}}
 \newcommand{\DIsntS}[1]{\JPost{#1}{\mathsf{isnt\_succ}}}
 
-\newcommand{\DIsErr}[1]{\JPost{#1}{\mathsf{erroneous}}}
+\newcommand{\DIsErr}[1]{\IsErr{#1}}
 
 \newcommand{\HasProp}[2]{{#1}\in{#2}}
 \newcommand{\HasPropVal}[2]{{#1}\in_{\mathsf{v}}{#2}}
