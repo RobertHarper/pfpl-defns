@@ -9,6 +9,6 @@ The definitions of general usage are found in
     4. Judgments: jdg.tex
     5. Transition systems: ts.tex
 
-The file defns-base.tex loads the compilation parameters and the general-use definitions.
+The file base.tex loads the compilation parameters and the general-use definitions.
 
-The file defns-chaps.tex loads the base and all chapters.  For fewer chapters use your own defns-chaps file.
+The file chaps.tex loads the base and all chapters.  For fewer chapters use your own definitions file that chooses the chapters to load.
