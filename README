@@ -1,5 +1,7 @@
 This directory contains the definition files for the syntax of languages used in PFPL.
 
+The compilation parameters are in params.tex.
+
 The definitions of general usage are found in
     1. Broad class of notations: generic.tex
     2. Language names: lang.tex
@@ -7,4 +9,6 @@ The definitions of general usage are found in
     4. Judgments: jdg.tex
     5. Transition systems: ts.tex
 
-The remaining definition files are per-chapter definitions.
+The file defns-base.tex loads the compilation parameters and the general-use definitions.
+
+The file defns-chaps.tex loads the base and all chapters.  For fewer chapters use your own defns-chaps file.
