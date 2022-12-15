@@ -6,6 +6,9 @@
 \AtBeginDocument{\mathcode`\;=\numexpr\mathcode`\;-\string"4000\relax}
 
 % wavy division sign
+\usepackage{stackengine}
+\usepackage{scalerel}
+
 \stackMath
 \def\ccdot{\scalebox{1.15}{$\SavedStyle\cdot$}}
 \def\genericform#1#2{\stackunder[#1]{\stackon[#2]{\SavedStyle\sim}{\ccdot}}{\ccdot}}
