@@ -16,33 +16,6 @@
   {\genericform{-1.4pt}{-0.8pt}}%
 }}}
 
-% \bigplus, \bigtimes
-\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
-\DeclareFontShape{U}{mathx}{m}{n}{
-    <5> <6> <7> <8> <9> <10> gen * mathx
-    <10.95> mathx10
-    <12> <14.4> <17.28> <20.74> <24.88> mathx12
-}{}
-\DeclareFontSubstitution{U}{mathx}{m}{n}
-\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
-\DeclareMathSymbol{\bigplus} {\mathop}{mathx}{"90}
-\DeclareMathSymbol{\bigtimes}{\mathop}{mathx}{"91}
-
-\makeatletter
-
-\@ifpackageloaded{amsmath}{%
-    \@ifundefined{coprod@}{}{
-        \typeout{*** Applying amsmath patches to \protect\bigplus\space
-                    and \protect\bigtimes. ***}
-        \global\let\bigplus@\bigplus
-        \gdef\bigplus{\DOTSB\bigplus@\slimits@}
-        \global\let\bigtimes@\bigtimes
-        \gdef\bigtimes{\DOTSB\bigtimes@\slimits@}
-    }
-}{}
-
-\makeatother
-
 % argument handling
 \newcommand{\ifnull}[3]{\ifthenelse{\equal{#1}{}}{#2}{#3}}
 \newcommand{\ifpresent}[2]{\ifnull{#1}{}{#2}}
