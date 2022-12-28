@@ -11,4 +11,4 @@ The definitions of general usage are found in
 
 The file base.tex loads the compilation parameters and the general-use definitions.
 
-The file chaps.tex loads the base and all chapters.  For fewer chapters use your own definitions file that chooses the chapters to load.
+The file chaps.tex loads the base and all chapters.  For fewer chapters use your own configuration file that chooses the chapters to load.
