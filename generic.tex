@@ -24,11 +24,6 @@
 \newcommand{\ifpresent}[2]{\ifnull{#1}{}{#2}}
 \newcommand{\optional}[1]{\lbrack #1\rbrack}
 
-\newcommand{\Domain}[1]{\mathop{\mathit{dom}}(#1)}
-\newcommand{\Disjoint}[2]{{#1}\mathrel{\#}{#2}}
-\newcommand{\NotInDom}[2]{#1\notin\Domain{#2}}
-\newcommand{\NotIn}[2]{{#1}\notin{#2}}
-
 \newcommand{\eqdef}{\mathrel{\triangleq}}
 \newcommand{\isdef}{\eqdef}
 
@@ -38,13 +33,10 @@
 \newcommand{\phantombnfalt}{\mathrel{\phantom{\mid}}}
 
 \newcommand{\pto}{\rightharpoonup}
-\newcommand{\backsl}{\ensuremath{\backslash}}
-\newcommand{\turnstile}{\ensuremath{\vdash}}
 \newcommand{\entails}[1][]{\vdash_{#1}}
 %\newcommand{\twiddle}{\raisebox{-.1\height}{\texttildelow}}
 \newcommand{\twiddle}{\raisebox{.2ex}{\texttildelow}}
 %\newcommand{\twiddle}{\ensuremath{\tilde{\ }}}
-\newcommand{\caret}{\ensuremath{\hat{\ }}}
 \newcommand{\swap}[2]{#1\mathbin{\leftrightarrow}#2}
 
 \newcommand{\parens}[1]{(#1)}
@@ -57,7 +49,7 @@
 \newcommand{\dblsqbracks}[1]{[\![#1]\!]}
 
 \newcommand{\kw}[1]{\ensuremath{\mathtt{#1}}}
-\newcommand{\kwop}[1]{\ensuremath{\mathop{\mathtt{#1}}}}
+\newcommand{\kwop}[1]{\ensuremath{\mathop{\mathtt{#1}}\nolimits}}
 \newcommand{\kwbin}[1]{\ensuremath{\mathbin{\mathtt{#1}}}}
 
 \newcommand{\cdcolon}{\kwbin{:}}
@@ -110,7 +102,7 @@
 \newcommand{\extff}[4][\otimes]{#2\mathbin{#1}{\pairff{#3}{#4}}}
 \newcommand{\varextff}[3]{\extff{#1}{#2}{#3}} %obsolete
 \newcommand{\appff}[2]{{#1}\parens{#2}}
-\newcommand{\domff}[1]{\Domain{#1}}
+\newcommand{\domff}[1]{\mathop{\textit{dom}}(#1)}
 \newcommand{\disjff}[2]{\domff{#1}\cap\domff{#2}=\emptyset}
 \newcommand{\genff}[3]{\parens{{#2}\mathbin{\hookrightarrow}{#3}}_{{#2}\in{#1}}}  % was braces
 \newcommand{\Genff}[3]{#2\mathbin{\hookrightarrow}#3\mid #2\in #1}
