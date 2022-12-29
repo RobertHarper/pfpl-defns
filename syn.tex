@@ -50,7 +50,8 @@
 \newcommand{\IsntFree}[2]{{#1}\notin{#2}}
 
 % substitution
-\newcommand{\Subst}[3]{\sqbracks{{#1}\mathord{/}{#2}}{#3}}
+% \newcommand{\Subst}[3]{\sqbracks{{#1}\mathord{/}{#2}}{#3}}
+\newcommand{\Subst}[3]{\braces{{#1}\mathord{/}{#2}}{#3}}
 \newcommand{\SubstIs}[4]{\Subst{#1}{#2}{#3}\mathbin{=}{#4}}
 \newcommand{\SubstIsAST}[4]{\IsAST{\SubstIs{#1}{#2}{#3}{#4}}}
 \newcommand{\SubstIsABTn}[5]{\IsABTn{\SubstIs{#1}{#2}{#3}{#4}}{#5}}
