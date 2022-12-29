@@ -18,15 +18,18 @@
 % operator families w/optional instance
 %\newcommand{\Opn}[2][]{{#2}\ifpresent{#1}{\cdsqbracks{#1}}}
 %\newcommand{\OpInst}[2]{\Opn[#2]{#1}}  % uses of \OpInst should be inlined
-\newcommand{\OpInst}[2]{{#1}\cdsqbracks{#2}}
+%\newcommand{\OpInst}[2]{{#1}\cdsqbracks{#2}}
+\newcommand{\OpInst}[2]{{#1}\langle {#2}\rangle}
 
 % asts
 \newcommand{\OpAST}[2]{{#1}\cdparens{#2}}
 
 % abt's
 \newcommand{\OpABT}[2]{{#1}\cdparens{#2}}
-\newcommand{\OpABTp}[3]{{#1}\cdbraces{#2}\cdparens{#3}}
-\newcommand{\OpABTn}[2]{{#1}\cdbraces{#2}}
+% \newcommand{\OpABTp}[3]{{#1}\cdbraces{#2}\cdparens{#3}}
+% \newcommand{\OpABTn}[2]{{#1}\cdbraces{#2}}
+\newcommand{\OpABTp}[3]{{#1}\cdsqbracks{#2}\cdparens{#3}}
+\newcommand{\OpABTn}[2]{{#1}\cdsqbracks{#2}}
 \newcommand{\ABT}[2]{\OpABT{#1}{#2}}
 
 \newcommand{\ABS}[2]{{#1}\mathbin{\cddot}{#2}}
