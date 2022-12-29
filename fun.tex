@@ -9,6 +9,8 @@
 \newcommand{\appabt}[2]{\OpABT{\kw{ap}}{#1;#2}}
 \newcommand{\appcst}[2]{{#1}\cdparens{#2}}
 
+\newcommand{\exptycst}[2]{{#1}^{#2}}
+
 \newcommand{\letabt}[4]{\OpABTp{\kw{let}}{#1}{#2;\AbsABT{#3}{#4}}}
 \newcommand{\letcst}[4]{\kwop{let}\IsOfVar{#3}{#1}\kwop{be}{#2}\kwop{in}{#4}}
 \newcommand{\uletabt}[3]{\OpABT{\kw{let}}{#1;\AbsABT{#2}{#3}}}
