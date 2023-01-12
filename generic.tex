@@ -39,14 +39,21 @@
 %\newcommand{\twiddle}{\ensuremath{\tilde{\ }}}
 \newcommand{\swap}[2]{#1\mathbin{\leftrightarrow}#2}
 
-\newcommand{\parens}[1]{(#1)}
-\newcommand{\braces}[1]{\{#1\}}
-\newcommand{\sqbracks}[1]{[#1]}
-\newcommand{\ptbracks}[1]{\langle #1\rangle}
-\newcommand{\brackets}[1]{\ptbracks{#1}}
-\newcommand{\corners}[1]{\ulcorner #1\urcorner}
-\newcommand{\dblptbracks}[1]{\langle\!\langle #1\rangle\!\rangle}
-\newcommand{\dblsqbracks}[1]{[\![#1]\!]}
+\DeclarePairedDelimeter{\parens}{(}{)}
+\DeclarePairedDelimeter{\braces}{\{}{\}}
+\DeclarePairedDelimeter{\sqbracks}{[}{]}
+\DeclarePairedDelimeter{\ptbracks}{\langle}{\rangle}
+\DeclarePairedDelimeter{\brackets}{\langle}{\rangle}
+\DeclarePairedDelimeter{\corners}{\ulcorner}{\urcorner}
+\DeclarePairedDelimeter{\dblsqbracks}{[\![}{]\!]}
+%\newcommand{\parens}[1]{(#1)}
+%\newcommand{\braces}[1]{\{#1\}}
+%\newcommand{\sqbracks}[1]{[#1]}
+%\newcommand{\ptbracks}[1]{\langle #1\rangle}
+%\newcommand{\brackets}[1]{\ptbracks{#1}}
+%\newcommand{\corners}[1]{\ulcorner #1\urcorner}
+%\newcommand{\dblptbracks}[1]{\langle\!\langle #1\rangle\!\rangle}
+%\newcommand{\dblsqbracks}[1]{[\![#1]\!]}
 
 \newcommand{\kw}[1]{\ensuremath{\mathtt{#1}}}
 \newcommand{\kwop}[1]{\ensuremath{\mathop{\mathtt{#1}}\nolimits}}
