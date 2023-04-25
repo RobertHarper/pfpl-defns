@@ -11,8 +11,10 @@
 \newcommand{\voidtycst}{\voidtyabt}
 \newcommand{\sumtycst}[2]{{#1}\mathbin{+}{#2}}
 
-\newcommand{\abortexabt}[2]{\OpABTp{\kw{absurd}}{#1}{#2}}
-\newcommand{\abortexcst}[2]{\OpABT{\kw{absurd}}{#2}}
+\newcommand{\abortexabt}[2]{\OpABTp{\kw{abort}}{#1}{#2}}
+\newcommand{\abortexcst}[2]{\OpABT{\kw{abort}}{#2}}
+\newcommand{\absurdexabt}[2]{\OpABTp{\kw{absurd}}{#1}{#2}}
+\newcommand{\absurdexcst}[2]{\OpABT{\kw{absurd}}{#2}}
 \newcommand{\nullcaseexabt}[2]{\OpABTp{\kw{case}}{#1}{#2}}
 \newcommand{\nullcaseexcst}[2]{\kwop{case}{#2}\,\cdbraces{\,}}
 
