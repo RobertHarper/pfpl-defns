@@ -10,13 +10,13 @@
 \newcommand{\expctx}[1]{\mathcal{#1}}
 \newcommand{\fillctx}[2]{{#1}\{{#2}\}}
 
-%\newcommand{\IsOfCtx}[4]{\IsOf{\fillctx{#1}{#2\entails\IsOf{\ctxhole}{#3}}}{#4}}
+%\newcommand{\IsOfCtx}[4]{\IsOf{\fillctx{#1}{#2\vdash\IsOf{\ctxhole}{#3}}}{#4}}
 \newcommand{\IsOfCtx}[5]{\IsOf{#1}{({#2}\triangleright{#3})\rightsquigarrow({#4}\triangleright{#5})}}
 \newcommand{\IsOfCtxCl}[3]{\IsOf{#1}{{#2}\rightsquigarrow{#3}}}
 
 % generic equivalence
 \newcommand{\IsEqvCl}[4]{\IsOf{{#2}\mathrel{#1}{#3}}{#4}}
-\newcommand{\IsEqv}[5]{{#2}\entails \IsEqvCl{#1}{#3}{#4}{#5}}
+\newcommand{\IsEqv}[5]{{#2}\vdash \IsEqvCl{#1}{#3}{#4}{#5}}
 
 \newcommand{\IsKlEqv}[2]{{#1}\simeq{#2}}
 \newcommand{\IsNotKlEqv}[2]{{#1}\not\simeq{#2}}
@@ -24,15 +24,15 @@
 
 \newcommand{\IsObsEqvCl}[3]{{#1}\obseqv_{#3}{#2}}
 \newcommand{\IsNotObsEqvCl}[3]{{#1}\not\obseqv_{#3}{#2}}
-\newcommand{\IsObsEqv}[4]{{#1}\entails\IsOf{{#2}\obseqv{#3}}{#4}}
-\newcommand{\IsNotObsEqv}[4]{{#1}\entails\IsNotObsEqvCl{#2}{#3}{#4}}
+\newcommand{\IsObsEqv}[4]{{#1}\vdash\IsOf{{#2}\obseqv{#3}}{#4}}
+\newcommand{\IsNotObsEqv}[4]{{#1}\vdash\IsNotObsEqvCl{#2}{#3}{#4}}
 
-\newcommand{\IsObsEqvU}[3]{{#1}\entails {#2}\obseqv{#3}}
+\newcommand{\IsObsEqvU}[3]{{#1}\vdash {#2}\obseqv{#3}}
 \newcommand{\IsObsEqvClU}[2]{{#1}\obseqv{#2}}
 \newcommand{\IsNotObsEqvClU}[2]{{#1}\not\obseqv{#2}}
 
 \newcommand{\IsLogEqvCl}[3]{{#1}\sim_{#3}{#2}}
-\newcommand{\IsLogEqv}[4]{{#1}\entails \IsOf{{#2}\sim{#3}}{#4}}
+\newcommand{\IsLogEqv}[4]{{#1}\vdash \IsOf{{#2}\sim{#3}}{#4}}
 %\newcommand{\IsLogEqvVal}[3]{\IsOf{{#1}\approx{#2}}{#3}}
 \newcommand{\IsLogEqvCtxCl}[4]{\IsOf{{#1}\sim{#2}}{{#3}\rightsquigarrow{#4}}}
 

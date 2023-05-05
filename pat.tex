@@ -42,12 +42,12 @@
 \newcommand{\trpatcst}{\trexcst}
 \newcommand{\fapatcst}{\faexcst}
 
-\newcommand{\IsOfPat}[3]{{#3}\entails\IsOf{#1}{#2}}
-\newcommand{\IsOfExp}[3]{{#1}\entails\IsOf{#2}{#3}}
+\newcommand{\IsOfPat}[3]{{#3}\vdash\IsOf{#1}{#2}}
+\newcommand{\IsOfExp}[3]{{#1}\vdash\IsOf{#2}{#3}}
 \newcommand{\IsOfRule}[3]{\IsOf{#1}{#2}\mathbin{\rightsquigarrow}{#3}}
 \newcommand{\IsOfRules}[3]{\IsOf{#1}{#2}\mathbin{\rightsquigarrow}{#3}}
 
-\newcommand{\PatMatch}[3]{{#1}\entails{#3}\mathrel{\triangleleft}{#2}}
+\newcommand{\PatMatch}[3]{{#1}\vdash{#3}\mathrel{\triangleleft}{#2}}
 \newcommand{\PatMismatch}[2]{{#1}\mathrel{\perp}{#2}}
 
 \newcommand{\trconabt}[1]{\OpInst{\kw{truth}}{#1}}
@@ -79,7 +79,7 @@
 
 \newcommand{\contradictory}[1]{\JPost{#1}{\textsf{incon}}}
 
-\newcommand{\IsOfPatC}[4]{{#3}\entails\IsOf{#1}{#2}\;\sqbracks{#4}}
+\newcommand{\IsOfPatC}[4]{{#3}\vdash\IsOf{#1}{#2}\;\sqbracks{#4}}
 \newcommand{\IsOfRuleC}[4]{\IsOf{#1}{#2}\mathbin{\rightsquigarrow}{#3}\;\sqbracks{#4}}
 \newcommand{\IsOfRulesC}[4]{\IsOf{#1}{#2}\mathbin{\rightsquigarrow}{#3}\;\sqbracks{#4}}
 
