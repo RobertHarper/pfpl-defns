@@ -45,8 +45,8 @@
 \newcommand{\RefSort}{\Sort{Ref}}
 
 % free occurrence
-\newcommand{\IsFree}[2]{{#1}\in{#2}}
-\newcommand{\IsntFree}[2]{{#1}\notin{#2}}
+\newcommand{\IsFree}[2]{{#1}\in\mathsf{FV}(#2)}
+\newcommand{\IsntFree}[2]{{#1}\notin\mathsf{FV}(#2)}
 
 % substitution
 % \newcommand{\Subst}[3]{\sqbracks{{#1}\mathord{/}{#2}}{#3}}
